@@ -104,7 +104,7 @@
     {
       "slug": "dentists",
       "title": "AI for Dentists in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Practice admin, documentation, patient communication, learning. No clinical or treatment advice.",
       "episode_module": "dentists",
       "file": "videos/AI-for-Dentists-in-2026.mp4",
@@ -126,7 +126,9 @@
         "Pearl Second Opinion",
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "youtube_id": "T0iTYVzBq1c",
+      "published": "2026-11-15"
     },
     {
       "slug": "lawyers",

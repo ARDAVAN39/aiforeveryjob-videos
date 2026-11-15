@@ -11,3 +11,4 @@
 - 2026-11-15: AI for Small Business Owners in 2026 rendered (6:34, presenter: shop owner in apron at a shop counter, new 'shop' room/'apron' outfit/'waves' hair, voice af_heart); left status rendered for the next run to publish (one publish per run)
 - 2026-11-15: AI for Small Business Owners in 2026 published, https://youtu.be/OHvV59v7d2A
 - 2026-11-15: AI for Dentists in 2026 rendered (7:29, presenter: dentist in ceil-blue scrubs with mask at neck, new 'dental' room/'scrubs' outfit/'side_part' hair, voice am_michael); left status rendered for the next run to publish (one publish per run)
+- 2026-11-15: AI for Dentists in 2026 published, https://youtu.be/T0iTYVzBq1c
