@@ -163,8 +163,10 @@
     {
       "slug": "nurses",
       "title": "AI for Nurses in 2026",
-      "status": "todo",
-      "note": "Documentation, scheduling, learning. No clinical advice."
+      "status": "in_progress",
+      "note": "Documentation, scheduling, learning. No clinical advice.",
+      "claimed_at": "2026-11-15T19:20:05Z",
+      "episode_module": "nurses"
     },
     {
       "slug": "marketers",
