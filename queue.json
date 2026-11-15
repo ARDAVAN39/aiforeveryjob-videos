@@ -165,7 +165,7 @@
     {
       "slug": "nurses",
       "title": "AI for Nurses in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Documentation, scheduling, learning. No clinical advice.",
       "episode_module": "nurses",
       "file": "videos/AI-for-Nurses-in-2026.mp4",
@@ -187,7 +187,9 @@
         "Epic Art (end-of-shift notes)",
         "Google NotebookLM",
         "ChatGPT (as consumer-chatbot example only)"
-      ]
+      ],
+      "youtube_id": "Fg9-b7tQg8U",
+      "published": "2026-11-15"
     },
     {
       "slug": "marketers",
