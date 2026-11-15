@@ -35,7 +35,7 @@ SCENES = [
              dict(card=("Claude Projects", "Keep the brief, research and voice guide together"),
                   say="In Claude, a project keeps files and instructions together. Upload the brief, research, and brand guide once, and every chat about this campaign starts from them."),
              dict(card=("Gemini Deep Research", "Browses many websites and writes a research report"),
-                  say="For the wider market, Gemini Deep Research browses many websites and write a competitor report. Treat it as a first map, and open the sources before quoting anything."),
+                  say="For the wider market, Gemini Deep Research browses many websites and writes a competitor report. Treat it as a first map, and open the sources before quoting anything."),
              dict(tip="Strip names, emails and order numbers before customer text goes into any AI tool.",
                   say="Before you paste customer text anywhere, strip out names, emails, and order numbers, and use only tools your company has approved. Check your privacy rules first."),
          ]),

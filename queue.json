@@ -194,8 +194,34 @@
     {
       "slug": "marketers",
       "title": "AI for Marketers in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-15T20:20:45Z"
+      "status": "rendered",
+      "episode_module": "marketers",
+      "file": "videos/AI-for-Marketers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:33 Write the brief",
+        "1:15 Listen to customers",
+        "2:15 Angles and copy",
+        "3:09 Visuals that fit",
+        "4:11 Search and content",
+        "4:56 Launch and test",
+        "5:44 The report",
+        "6:30 Three rules",
+        "7:12 Wrap-up"
+      ],
+      "tools": [
+        "HubSpot Breeze Assistant",
+        "HubSpot Content Agent",
+        "ChatGPT data analysis",
+        "Claude Projects",
+        "Gemini Deep Research",
+        "Canva Magic Write (brand voice)",
+        "Canva Magic Resize",
+        "Adobe Firefly (Content Credentials)",
+        "Google Ads AI Max for Search",
+        "Meta Advantage+ creative",
+        "Google Analytics generated insights"
+      ]
     },
     {
       "slug": "accountants",
