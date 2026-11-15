@@ -102,8 +102,10 @@
     {
       "slug": "dentists",
       "title": "AI for Dentists in 2026",
-      "status": "todo",
-      "note": "Practice admin, documentation, patient communication, learning. No clinical or treatment advice."
+      "status": "in_progress",
+      "note": "Practice admin, documentation, patient communication, learning. No clinical or treatment advice.",
+      "claimed_at": "2026-11-15T17:20:21Z",
+      "episode_module": "dentists"
     },
     {
       "slug": "lawyers",
