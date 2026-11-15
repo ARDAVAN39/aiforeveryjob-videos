@@ -228,9 +228,31 @@
     {
       "slug": "accountants",
       "title": "AI for Accountants in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "No tax or investment advice.",
-      "claimed_at": "2026-11-15T21:20:01Z"
+      "episode_module": "accountants",
+      "file": "videos/AI-for-Accountants-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:28 The receipt pile",
+        "1:11 The bank feed",
+        "2:08 Chasing the client",
+        "2:53 The inherited workbook",
+        "3:35 Review: find the odd ones",
+        "4:15 Explain the month",
+        "5:05 File notes and research",
+        "5:48 Three rules",
+        "6:32 Wrap-up"
+      ],
+      "tools": [
+        "Dext",
+        "QuickBooks Online Accounting AI (ready to post, AI-powered reconciliation, missing-receipt requests, report insights)",
+        "Karbon AI",
+        "Claude for Excel",
+        "Microsoft Copilot in Excel",
+        "JAX in Xero",
+        "Thomson Reuters CoCounsel Tax"
+      ]
     },
     {
       "slug": "designers",
