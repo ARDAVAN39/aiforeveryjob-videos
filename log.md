@@ -6,3 +6,4 @@
 - 2026-11-15: AI for Teachers in 2026 published (finished the Studio draft), https://youtu.be/CkGBEe_GwAc
 - 2026-11-15: AI for Doctors in 2026 rendered (7:23, presenter: doctor in clinic, voice af_bella after af_nicole ran 11 min); left status rendered for the next run to publish (one publish per run)
 - 2026-11-15: AI for Doctors in 2026 published, https://youtu.be/lF_bmOtSIXk
+- 2026-11-15: AI for Software Developers in 2026 rendered (6:06, presenter: ginger developer in zip hoodie, devroom, voice am_adam; module episodes/software_developers.py since hyphenated slugs don't import); left status rendered for the next run to publish (one publish per run)

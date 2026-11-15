@@ -49,8 +49,27 @@
     {
       "slug": "software-developers",
       "title": "AI for Software Developers in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-15T15:20:24Z"
+      "status": "rendered",
+      "episode_module": "software_developers",
+      "file": "videos/AI-for-Software-Developers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:30 Read code you didn't write",
+        "1:05 Plan before you prompt",
+        "1:40 Let an agent do the typing",
+        "2:22 Tests first, then code",
+        "3:08 Debug from the stack trace",
+        "3:46 Review, commit, ship",
+        "4:24 Learn a new stack",
+        "5:04 Three rules",
+        "5:46 Wrap-up"
+      ],
+      "tools": [
+        "Claude Code",
+        "GitHub Copilot (Chat, agent mode, cloud agent, code review)",
+        "OpenAI Codex / Codex CLI",
+        "Cursor"
+      ]
     },
     {
       "slug": "small-business-owners",
