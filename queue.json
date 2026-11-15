@@ -131,8 +131,10 @@
     {
       "slug": "lawyers",
       "title": "AI for Lawyers in 2026",
-      "status": "todo",
-      "note": "Stress confidentiality and checking every citation."
+      "status": "in_progress",
+      "note": "Stress confidentiality and checking every citation.",
+      "claimed_at": "2026-11-15T18:19:47Z",
+      "episode_module": "lawyers"
     },
     {
       "slug": "nurses",
