@@ -226,8 +226,9 @@
     {
       "slug": "accountants",
       "title": "AI for Accountants in 2026",
-      "status": "todo",
-      "note": "No tax or investment advice."
+      "status": "in_progress",
+      "note": "No tax or investment advice.",
+      "claimed_at": "2026-11-15T21:20:01Z"
     },
     {
       "slug": "designers",
