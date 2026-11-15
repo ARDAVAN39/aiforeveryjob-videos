@@ -28,9 +28,21 @@
     {
       "slug": "doctors",
       "title": "AI for Doctors in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Only how clinicians use AI for documentation, admin, research and learning. No medical advice, no diagnosis claims.",
-      "claimed_at": "2026-11-15T14:19:58Z"
+      "file": "videos/AI-for-Doctors-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:31 In the room: the scribe",
+        "1:29 Review, then sign",
+        "2:08 The inbox",
+        "3:03 Letters and forms",
+        "3:50 Words patients understand",
+        "4:34 Keeping up with evidence",
+        "5:30 Teaching and learning",
+        "6:14 Three rules",
+        "7:01 Wrap-up"
+      ]
     },
     {
       "slug": "software-developers",

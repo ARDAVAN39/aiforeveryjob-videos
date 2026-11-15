@@ -16,7 +16,10 @@ MANAGER = dict(skin="#C8936C", skin_shade="#B07C58", hair="#1F1A1A", outfit="#2F
 TEACHER = dict(skin="#8D5A3B", skin_shade="#74452B", hair="#1A1210", outfit="#9C3D4E", outfit_shade="#7E2F3E",
     accent="#CFE3F5", wall_top="#5A4636", wall_bot="#2B2019", room="classroom", outfit_style="cardigan", hair_style="curly",
     glasses=False, beard=True)
-PRESENTERS = {"student": STUDENT, "manager": MANAGER, "teacher": TEACHER}
+DOCTOR = dict(skin="#E3B48E", skin_shade="#C99670", hair="#2A1F2E", outfit="#F7F9FB", outfit_shade="#D5DEE6",
+    accent="#2A9D8F", wall_top="#DCEBEA", wall_bot="#9FC3C4", room="clinic", outfit_style="coat", hair_style="bob",
+    glasses=False)
+PRESENTERS = {"student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -26,6 +29,23 @@ def _render(body):
     return Image.open(io.BytesIO(png)).convert("RGBA").resize((PW, PH), Image.LANCZOS)
 
 def backdrop(c):
+    if c["room"] == "clinic":
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/>
+        <rect x="0" y="236" width="{PW}" height="8" fill="#FFFFFF" opacity="0.6"/>
+        <rect x="24" y="52" width="132" height="94" rx="8" fill="#1B2A4A"/><rect x="31" y="59" width="118" height="80" rx="4" fill="#0F2233"/>
+        <path d="M38 104 L64 104 L72 88 L80 122 L90 76 L98 112 L104 104 L142 104" stroke="#5FE0B7" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="80" y="146" width="20" height="18" fill="#1B2A4A"/><rect x="62" y="162" width="56" height="7" rx="3" fill="#1B2A4A"/>
+        <rect x="34" y="186" width="96" height="44" rx="6" fill="#FFFFFF" opacity="0.85"/><rect x="44" y="198" width="54" height="6" rx="3" fill="#9FC3C4"/><rect x="44" y="212" width="72" height="6" rx="3" fill="#9FC3C4"/>
+        <rect x="318" y="48" width="98" height="132" rx="6" fill="#FFFFFF"/>
+        <text x="367" y="86" font-family="Inter" font-weight="700" font-size="30" fill="#1B2A4A" text-anchor="middle">E</text>
+        <text x="367" y="114" font-family="Inter" font-weight="700" font-size="20" fill="#1B2A4A" text-anchor="middle">F P</text>
+        <text x="367" y="136" font-family="Inter" font-weight="700" font-size="14" fill="#1B2A4A" text-anchor="middle">T O Z</text>
+        <text x="367" y="154" font-family="Inter" font-weight="700" font-size="10" fill="#1B2A4A" text-anchor="middle">L P E D</text>
+        <rect x="350" y="200" width="40" height="40" rx="6" fill="#2A9D8F"/><path d="M370 208 L370 232 M358 220 L382 220" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+        <path d="M26 330 Q22 286 44 262 Q48 300 40 330 Z" fill="#4E9F6A"/><path d="M40 330 Q46 280 78 266 Q66 304 54 330 Z" fill="#5FAF5A"/>
+        <rect x="24" y="326" width="42" height="40" rx="6" fill="#F4F1DE"/>
+        <rect x="380" y="296" width="30" height="62" rx="6" fill="#FFFFFF"/><rect x="386" y="282" width="18" height="16" rx="3" fill="#56CCF2"/><rect x="384" y="316" width="22" height="18" rx="2" fill="#56CCF2" opacity="0.6"/>'''
     if c["room"] == "classroom":
         chalk = 'stroke="#EEF3E8" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"'
         return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient></defs>
@@ -69,6 +89,24 @@ def backdrop(c):
     return b
 
 def body(c):
+    if c["outfit_style"] == "coat":
+        return f'''
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 482 L268 446 C352 464 404 524 404 640 Z" fill="{c["outfit"]}"/>
+    <path d="M178 446 L220 600 L262 446 L220 478 Z" fill="{c["accent"]}"/>
+    <path d="M190 446 L220 486 L250 446 L220 470 Z" fill="{c["skin_shade"]}"/>
+    <path d="M172 446 L144 520 L184 552 L208 640 L172 640 L122 524 Z" fill="{c["outfit_shade"]}"/>
+    <path d="M268 446 L296 520 L256 552 L232 640 L268 640 L318 524 Z" fill="{c["outfit_shade"]}"/>
+    <path d="M172 446 L144 520 L184 552 L220 604 L178 448 Z" fill="{c["outfit"]}" stroke="{c["outfit_shade"]}" stroke-width="3"/>
+    <path d="M268 446 L296 520 L256 552 L220 604 L262 448 Z" fill="{c["outfit"]}" stroke="{c["outfit_shade"]}" stroke-width="3"/>
+    <path d="M186 452 C170 500 172 540 196 560" stroke="#1B2A4A" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M254 452 C270 500 268 528 254 546" stroke="#1B2A4A" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M196 560 C206 572 222 572 232 562" stroke="#1B2A4A" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="254" cy="552" r="12" fill="#AEB8C2" stroke="#1B2A4A" stroke-width="4"/><circle cx="254" cy="552" r="5" fill="#E6ECF1"/>
+    <rect x="286" y="560" width="50" height="40" rx="5" fill="{c["outfit_shade"]}"/>
+    <rect x="296" y="540" width="7" height="30" rx="2" fill="#1B2A4A"/><rect x="308" y="544" width="7" height="26" rx="2" fill="{c["accent"]}"/>
+    <rect x="104" y="548" width="56" height="30" rx="4" fill="#FFFFFF" stroke="{c["outfit_shade"]}" stroke-width="2"/>
+    <rect x="110" y="556" width="18" height="14" rx="2" fill="{c["accent"]}"/><rect x="132" y="557" width="22" height="4" rx="2" fill="#1B2A4A"/><rect x="132" y="565" width="16" height="4" rx="2" fill="#9AA6B2"/>'''
     if c["outfit_style"] == "cardigan":
         return f'''
     <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
@@ -127,6 +165,8 @@ def head(c, mouth, blink):
             a = math.pi * (1.05 - 1.1 * i / 12)
             x, y = 220 + 104 * math.cos(a), 250 - 100 * math.sin(a)
             hair += f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{27 if 2 < i < 10 else 22}" fill="{c["hair"]}"/>'
+    elif c["hair_style"] == "bob":
+        hair = f'<path d="M112 330 C92 190 168 140 222 144 C290 140 352 190 330 330 L304 336 C314 280 304 236 286 216 C252 236 196 234 160 210 C140 240 130 280 138 336 Z" fill="{c["hair"]}"/>'
     elif c["hair_style"] == "short":
         hair = f'<path d="M122 282 C106 172 182 146 222 150 C298 144 338 204 318 284 C312 244 300 216 272 204 C232 216 180 216 150 208 C134 228 126 254 122 282 Z" fill="{c["hair"]}"/>'
     else:
