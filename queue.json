@@ -76,7 +76,7 @@
     {
       "slug": "small-business-owners",
       "title": "AI for Small Business Owners in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "small_business_owners",
       "file": "videos/AI-for-Small-Business-Owners-in-2026.mp4",
       "chapters": [
@@ -97,7 +97,9 @@
         "Canva Magic Studio (Magic Write, Magic Design, resize)",
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "youtube_id": "OHvV59v7d2A",
+      "published": "2026-11-15"
     },
     {
       "slug": "dentists",

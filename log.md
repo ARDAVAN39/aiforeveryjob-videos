@@ -9,3 +9,4 @@
 - 2026-11-15: AI for Software Developers in 2026 rendered (6:06, presenter: ginger developer in zip hoodie, devroom, voice am_adam; module episodes/software_developers.py since hyphenated slugs don't import); left status rendered for the next run to publish (one publish per run)
 - 2026-11-15: AI for Software Developers in 2026 published, https://youtu.be/vCrizwFm7Z4
 - 2026-11-15: AI for Small Business Owners in 2026 rendered (6:34, presenter: shop owner in apron at a shop counter, new 'shop' room/'apron' outfit/'waves' hair, voice af_heart); left status rendered for the next run to publish (one publish per run)
+- 2026-11-15: AI for Small Business Owners in 2026 published, https://youtu.be/OHvV59v7d2A
