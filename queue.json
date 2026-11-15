@@ -74,7 +74,9 @@
     {
       "slug": "small-business-owners",
       "title": "AI for Small Business Owners in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-15T16:20:26Z",
+      "episode_module": "small_business_owners"
     },
     {
       "slug": "dentists",
