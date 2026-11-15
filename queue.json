@@ -257,7 +257,9 @@
     {
       "slug": "designers",
       "title": "AI for Designers in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-15T22:20:14Z",
+      "episode_module": "designers"
     },
     {
       "slug": "sales",
