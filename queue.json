@@ -257,9 +257,34 @@
     {
       "slug": "designers",
       "title": "AI for Designers in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-15T22:20:14Z",
-      "episode_module": "designers"
+      "status": "rendered",
+      "episode_module": "designers",
+      "file": "videos/AI-for-Designers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:33 Make sense of research",
+        "1:26 Frame it, then go wide",
+        "2:11 Prototype in minutes",
+        "2:55 Images and brand assets",
+        "3:56 Critique and accessibility",
+        "4:44 Clean handoff",
+        "5:28 Your portfolio and craft",
+        "6:22 Three rules",
+        "7:06 Wrap-up"
+      ],
+      "tools": [
+        "Dovetail AI",
+        "FigJam (sort and summarize stickies, Jambot)",
+        "Figma agent and Figma AI image tools, rename layers",
+        "Figma Make",
+        "Figma MCP server",
+        "Adobe Illustrator Generative Recolor",
+        "Adobe Photoshop Generative Fill",
+        "Adobe Firefly",
+        "Framer AI",
+        "ChatGPT",
+        "Claude"
+      ]
     },
     {
       "slug": "sales",
