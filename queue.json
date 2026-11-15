@@ -49,7 +49,7 @@
     {
       "slug": "software-developers",
       "title": "AI for Software Developers in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "software_developers",
       "file": "videos/AI-for-Software-Developers-in-2026.mp4",
       "chapters": [
@@ -69,7 +69,9 @@
         "GitHub Copilot (Chat, agent mode, cloud agent, code review)",
         "OpenAI Codex / Codex CLI",
         "Cursor"
-      ]
+      ],
+      "youtube_id": "vCrizwFm7Z4",
+      "published": "2026-11-15"
     },
     {
       "slug": "small-business-owners",
