@@ -104,10 +104,29 @@
     {
       "slug": "dentists",
       "title": "AI for Dentists in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Practice admin, documentation, patient communication, learning. No clinical or treatment advice.",
-      "claimed_at": "2026-11-15T17:20:21Z",
-      "episode_module": "dentists"
+      "episode_module": "dentists",
+      "file": "videos/AI-for-Dentists-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:35 Chairside notes",
+        "1:35 The phone that never stops",
+        "2:21 Recalls that get answered",
+        "2:57 Insurance narratives",
+        "3:54 Plans patients understand",
+        "4:37 The practice playbook",
+        "5:26 Learning and new tools",
+        "6:15 Three rules",
+        "7:03 Wrap-up"
+      ],
+      "tools": [
+        "Dentrix Ascend Voice Notes and Voice Perio",
+        "Weave AI Receptionist",
+        "Pearl Second Opinion",
+        "ChatGPT",
+        "Claude"
+      ]
     },
     {
       "slug": "lawyers",
