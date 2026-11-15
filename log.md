@@ -17,3 +17,4 @@
 - 2026-11-15: AI for Nurses in 2026 rendered (6:31, presenter: male nurse in wine scrubs with stethoscope and round glasses, new 'ward' room/'nurse_scrubs' outfit/'buzz' hair, voice am_adam; one-shift clock-time structure); fact-check softened Epic Art availability line; left status rendered for the next run to publish (one publish per run)
 - 2026-11-15: AI for Nurses in 2026 published, https://youtu.be/Fg9-b7tQg8U
 - 2026-11-15: AI for Marketers in 2026 rendered (7:35, presenter: East Asian man with textured fringe in a denim shirt, new 'agency' room/'denim_shirt' outfit/'fringe' hair, voice am_michael; one-campaign brief-to-report structure); fact-check found no wrong claims (one grammar fix); left status rendered for the next run to publish (one publish per run)
+- 2026-11-15: AI for Marketers in 2026 published, https://youtu.be/MccU44bFFzs

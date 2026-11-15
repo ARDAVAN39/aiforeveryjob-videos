@@ -194,7 +194,7 @@
     {
       "slug": "marketers",
       "title": "AI for Marketers in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "marketers",
       "file": "videos/AI-for-Marketers-in-2026.mp4",
       "chapters": [
@@ -221,7 +221,9 @@
         "Google Ads AI Max for Search",
         "Meta Advantage+ creative",
         "Google Analytics generated insights"
-      ]
+      ],
+      "youtube_id": "MccU44bFFzs",
+      "published": "2026-11-15"
     },
     {
       "slug": "accountants",
