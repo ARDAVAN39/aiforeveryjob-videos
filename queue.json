@@ -1,29 +1,136 @@
 {
   "_note": "Daily run: publish the first item with status 'rendered'; if none, produce the first 'todo' item, then publish it. Update status, youtube_id and published date after publishing.",
   "episodes": [
-    {"slug": "students", "title": "AI for Students in 2026", "file": "videos/AI-for-Students-in-2026.mp4", "status": "published", "youtube_id": "o4AW12jYEmg", "published": "2026-11-15"},
-    {"slug": "managers", "title": "AI for Managers in 2026", "file": "videos/AI-for-Managers-in-2026.mp4", "status": "rendered"},
-    {"slug": "teachers", "title": "AI for Teachers in 2026", "status": "todo"},
-    {"slug": "doctors", "title": "AI for Doctors in 2026", "status": "todo", "note": "Only how clinicians use AI for documentation, admin, research and learning. No medical advice, no diagnosis claims."},
-    {"slug": "software-developers", "title": "AI for Software Developers in 2026", "status": "todo"},
-    {"slug": "small-business-owners", "title": "AI for Small Business Owners in 2026", "status": "todo"},
-    {"slug": "dentists", "title": "AI for Dentists in 2026", "status": "todo", "note": "Practice admin, documentation, patient communication, learning. No clinical or treatment advice."},
-    {"slug": "lawyers", "title": "AI for Lawyers in 2026", "status": "todo", "note": "Stress confidentiality and checking every citation."},
-    {"slug": "nurses", "title": "AI for Nurses in 2026", "status": "todo", "note": "Documentation, scheduling, learning. No clinical advice."},
-    {"slug": "marketers", "title": "AI for Marketers in 2026", "status": "todo"},
-    {"slug": "accountants", "title": "AI for Accountants in 2026", "status": "todo", "note": "No tax or investment advice."},
-    {"slug": "designers", "title": "AI for Designers in 2026", "status": "todo"},
-    {"slug": "sales", "title": "AI for Salespeople in 2026", "status": "todo"},
-    {"slug": "hr", "title": "AI for HR Professionals in 2026", "status": "todo"},
-    {"slug": "real-estate-agents", "title": "AI for Real Estate Agents in 2026", "status": "todo"},
-    {"slug": "researchers", "title": "AI for Researchers in 2026", "status": "todo"},
-    {"slug": "customer-support", "title": "AI for Customer Support in 2026", "status": "todo"},
-    {"slug": "journalists", "title": "AI for Journalists in 2026", "status": "todo"},
-    {"slug": "architects", "title": "AI for Architects in 2026", "status": "todo"},
-    {"slug": "pharmacists", "title": "AI for Pharmacists in 2026", "status": "todo", "note": "Workflow and admin only. No dosing or clinical advice."},
-    {"slug": "chefs", "title": "AI for Chefs and Restaurant Owners in 2026", "status": "todo"},
-    {"slug": "electricians", "title": "AI for Electricians and Tradespeople in 2026", "status": "todo"},
-    {"slug": "freelancers", "title": "AI for Freelancers in 2026", "status": "todo"},
-    {"slug": "job-seekers", "title": "AI for Job Seekers in 2026", "status": "todo"}
+    {
+      "slug": "students",
+      "title": "AI for Students in 2026",
+      "file": "videos/AI-for-Students-in-2026.mp4",
+      "status": "published",
+      "youtube_id": "o4AW12jYEmg",
+      "published": "2026-11-15"
+    },
+    {
+      "slug": "managers",
+      "title": "AI for Managers in 2026",
+      "file": "videos/AI-for-Managers-in-2026.mp4",
+      "status": "rendered"
+    },
+    {
+      "slug": "teachers",
+      "title": "AI for Teachers in 2026",
+      "status": "in_progress",
+      "claimed_at": "2026-11-15T13:19:54Z"
+    },
+    {
+      "slug": "doctors",
+      "title": "AI for Doctors in 2026",
+      "status": "todo",
+      "note": "Only how clinicians use AI for documentation, admin, research and learning. No medical advice, no diagnosis claims."
+    },
+    {
+      "slug": "software-developers",
+      "title": "AI for Software Developers in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "small-business-owners",
+      "title": "AI for Small Business Owners in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "dentists",
+      "title": "AI for Dentists in 2026",
+      "status": "todo",
+      "note": "Practice admin, documentation, patient communication, learning. No clinical or treatment advice."
+    },
+    {
+      "slug": "lawyers",
+      "title": "AI for Lawyers in 2026",
+      "status": "todo",
+      "note": "Stress confidentiality and checking every citation."
+    },
+    {
+      "slug": "nurses",
+      "title": "AI for Nurses in 2026",
+      "status": "todo",
+      "note": "Documentation, scheduling, learning. No clinical advice."
+    },
+    {
+      "slug": "marketers",
+      "title": "AI for Marketers in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "accountants",
+      "title": "AI for Accountants in 2026",
+      "status": "todo",
+      "note": "No tax or investment advice."
+    },
+    {
+      "slug": "designers",
+      "title": "AI for Designers in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "sales",
+      "title": "AI for Salespeople in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "hr",
+      "title": "AI for HR Professionals in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "real-estate-agents",
+      "title": "AI for Real Estate Agents in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "researchers",
+      "title": "AI for Researchers in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "customer-support",
+      "title": "AI for Customer Support in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "journalists",
+      "title": "AI for Journalists in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "architects",
+      "title": "AI for Architects in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "pharmacists",
+      "title": "AI for Pharmacists in 2026",
+      "status": "todo",
+      "note": "Workflow and admin only. No dosing or clinical advice."
+    },
+    {
+      "slug": "chefs",
+      "title": "AI for Chefs and Restaurant Owners in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "electricians",
+      "title": "AI for Electricians and Tradespeople in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "freelancers",
+      "title": "AI for Freelancers in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "job-seekers",
+      "title": "AI for Job Seekers in 2026",
+      "status": "todo"
+    }
   ]
 }
