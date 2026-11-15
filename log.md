@@ -14,3 +14,4 @@
 - 2026-11-15: AI for Dentists in 2026 published, https://youtu.be/T0iTYVzBq1c
 - 2026-11-15: AI for Lawyers in 2026 rendered (7:26, presenter: lawyer in charcoal suit with gold-rim glasses, new 'law_office' room/'suit' outfit/'long_straight' hair, voice af_bella); fact-check renamed Clio Duo to Manage AI, Claude in Word to Claude for Word, tightened ABA 512 line; left status rendered for the next run to publish (one publish per run)
 - 2026-11-15: AI for Lawyers in 2026 published, https://youtu.be/LR8vEPUNBUU
+- 2026-11-15: AI for Nurses in 2026 rendered (6:31, presenter: male nurse in wine scrubs with stethoscope and round glasses, new 'ward' room/'nurse_scrubs' outfit/'buzz' hair, voice am_adam; one-shift clock-time structure); fact-check softened Epic Art availability line; left status rendered for the next run to publish (one publish per run)

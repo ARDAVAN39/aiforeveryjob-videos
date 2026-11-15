@@ -165,10 +165,29 @@
     {
       "slug": "nurses",
       "title": "AI for Nurses in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Documentation, scheduling, learning. No clinical advice.",
-      "claimed_at": "2026-11-15T19:20:05Z",
-      "episode_module": "nurses"
+      "episode_module": "nurses",
+      "file": "videos/AI-for-Nurses-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:27 07:30 Charting by voice",
+        "1:19 10:00 Check the policy",
+        "1:59 12:00 Teach-back handouts",
+        "2:46 14:00 Your new grad",
+        "3:23 16:00 Schedules and swaps",
+        "4:01 18:30 Handoff in SBAR",
+        "4:50 After shift: keep learning",
+        "5:29 Three rules",
+        "6:12 Wrap-up"
+      ],
+      "tools": [
+        "Microsoft Dragon Copilot experience for nurses (Epic Rover)",
+        "Abridge for Nursing",
+        "Epic Art (end-of-shift notes)",
+        "Google NotebookLM",
+        "ChatGPT (as consumer-chatbot example only)"
+      ]
     },
     {
       "slug": "marketers",
