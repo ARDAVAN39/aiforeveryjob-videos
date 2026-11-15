@@ -21,7 +21,9 @@
       "slug": "teachers",
       "title": "AI for Teachers in 2026",
       "status": "rendered",
-      "file": "videos/AI-for-Teachers-in-2026.mp4"
+      "file": "videos/AI-for-Teachers-in-2026.mp4",
+      "youtube_draft_id": "CkGBEe_GwAc",
+      "note_publish": "Uploaded to Studio as a draft with title, description and not-made-for-kids set; only the Public/Done step remains. Next run: open the draft (Edit draft) instead of re-uploading."
     },
     {
       "slug": "doctors",
