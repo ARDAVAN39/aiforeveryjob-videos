@@ -12,3 +12,4 @@
 - 2026-11-15: AI for Small Business Owners in 2026 published, https://youtu.be/OHvV59v7d2A
 - 2026-11-15: AI for Dentists in 2026 rendered (7:29, presenter: dentist in ceil-blue scrubs with mask at neck, new 'dental' room/'scrubs' outfit/'side_part' hair, voice am_michael); left status rendered for the next run to publish (one publish per run)
 - 2026-11-15: AI for Dentists in 2026 published, https://youtu.be/T0iTYVzBq1c
+- 2026-11-15: AI for Lawyers in 2026 rendered (7:26, presenter: lawyer in charcoal suit with gold-rim glasses, new 'law_office' room/'suit' outfit/'long_straight' hair, voice af_bella); fact-check renamed Clio Duo to Manage AI, Claude in Word to Claude for Word, tightened ABA 512 line; left status rendered for the next run to publish (one publish per run)

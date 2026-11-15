@@ -133,10 +133,32 @@
     {
       "slug": "lawyers",
       "title": "AI for Lawyers in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Stress confidentiality and checking every citation.",
-      "claimed_at": "2026-11-15T18:19:47Z",
-      "episode_module": "lawyers"
+      "episode_module": "lawyers",
+      "file": "videos/AI-for-Lawyers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:37 Before the first prompt",
+        "1:29 Intake and conflicts",
+        "2:03 Research with sources",
+        "2:44 Every citation, checked",
+        "3:42 First drafts",
+        "4:18 The document stack",
+        "5:07 Clients and the bill",
+        "5:43 Learn a new practice area",
+        "6:16 Three rules",
+        "7:02 Wrap-up"
+      ],
+      "tools": [
+        "Thomson Reuters CoCounsel Legal",
+        "Lexis+ with Protégé and Shepard's Verify",
+        "Clio Manage AI",
+        "Harvey Vault",
+        "Microsoft Copilot in Word",
+        "Claude for Word",
+        "ChatGPT"
+      ]
     },
     {
       "slug": "nurses",
