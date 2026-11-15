@@ -28,8 +28,9 @@
     {
       "slug": "doctors",
       "title": "AI for Doctors in 2026",
-      "status": "todo",
-      "note": "Only how clinicians use AI for documentation, admin, research and learning. No medical advice, no diagnosis claims."
+      "status": "in_progress",
+      "note": "Only how clinicians use AI for documentation, admin, research and learning. No medical advice, no diagnosis claims.",
+      "claimed_at": "2026-11-15T14:19:58Z"
     },
     {
       "slug": "software-developers",
