@@ -22,7 +22,10 @@ DOCTOR = dict(skin="#E3B48E", skin_shade="#C99670", hair="#2A1F2E", outfit="#F7F
 DEVELOPER = dict(skin="#F5D5BC", skin_shade="#E2B497", hair="#B4532A", outfit="#3B4252", outfit_shade="#2A2F3B",
     accent="#7EE787", tee="#E9EEF3", wall_top="#2E2A4A", wall_bot="#14121F", room="devroom", outfit_style="zip_hoodie",
     hair_style="quiff", glasses="square")
-PRESENTERS = {"student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
+SHOPOWNER = dict(skin="#6B4430", skin_shade="#553423", hair="#17110E", outfit="#E9DCC6", outfit_shade="#C9B79B",
+    accent="#E07A3F", apron="#2F6F68", apron_shade="#235650", wall_top="#F3E3C8", wall_bot="#D9BE95", room="shop", outfit_style="apron",
+    hair_style="waves", glasses=False)
+PRESENTERS = {"shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -52,6 +55,26 @@ def _monitor(x, y, w, h, seed):
     return m
 
 def backdrop(c):
+    if c["room"] == "shop":
+        awn = ''.join(f'<path d="M{x} 0 L{x+44} 0 L{x+44} 30 Q{x+22} 44 {x} 30 Z" fill="{col}"/>' for x, col in zip(range(0, 440, 44), ["#E07A3F", "#FFF6E8"] * 5))
+        jars = ''
+        for i, (x, col) in enumerate([(22, "#E9B44C"), (52, "#B5523B"), (82, "#7FA36B"), (112, "#E9B44C")]):
+            jars += f'<rect x="{x}" y="96" width="24" height="34" rx="5" fill="{col}" opacity="0.9"/><rect x="{x+2}" y="90" width="20" height="8" rx="2" fill="#6E4B32"/><rect x="{x+4}" y="108" width="16" height="10" rx="2" fill="#FFF6E8"/>'
+        for i, (x, w, col) in enumerate([(22, 30, "#2F6F68"), (56, 22, "#E07A3F"), (82, 34, "#F3E3C8"), (120, 24, "#B5523B")]):
+            jars += f'<rect x="{x}" y="{176-28-(i%2)*8}" width="{w}" height="{28+(i%2)*8}" rx="4" fill="{col}"/>'
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/>
+                {awn}
+        <rect x="10" y="130" width="140" height="8" rx="3" fill="#6E4B32"/><rect x="10" y="176" width="140" height="8" rx="3" fill="#6E4B32"/>
+        {jars}
+        <path d="M352 52 L330 84 M352 52 L404 84" stroke="#6E4B32" stroke-width="2.5"/><circle cx="352" cy="52" r="4" fill="#6E4B32"/>
+        <rect x="318" y="84" width="100" height="44" rx="8" fill="#2F6F68"/><text x="368" y="115" font-family="Inter" font-weight="800" font-size="22" fill="#FFF6E8" text-anchor="middle">OPEN</text>
+        <rect x="326" y="142" width="96" height="80" rx="6" fill="#6E4B32"/><rect x="332" y="148" width="84" height="68" rx="3" fill="#2B2B2B"/>
+        <rect x="342" y="160" width="44" height="5" rx="2" fill="#FFF6E8" opacity="0.85"/><rect x="342" y="174" width="60" height="5" rx="2" fill="#FFF6E8" opacity="0.7"/><rect x="342" y="188" width="36" height="5" rx="2" fill="#E9B44C" opacity="0.9"/><rect x="342" y="202" width="52" height="5" rx="2" fill="#FFF6E8" opacity="0.7"/>
+        <rect x="0" y="300" width="{PW}" height="340" fill="#8A5E3C"/><rect x="0" y="300" width="{PW}" height="12" fill="#6E4B32"/>
+        <rect x="16" y="252" width="64" height="48" rx="6" fill="#3A3F47"/><rect x="24" y="258" width="48" height="18" rx="3" fill="#9FD8CB"/><rect x="24" y="282" width="10" height="8" rx="2" fill="#C9CED6"/><rect x="38" y="282" width="10" height="8" rx="2" fill="#C9CED6"/><rect x="52" y="282" width="10" height="8" rx="2" fill="#E07A3F"/>
+        <path d="M376 300 L372 270 L412 270 L408 300 Z" fill="#E07A3F"/><path d="M392 270 Q378 240 386 226 Q396 244 394 270 Z" fill="#4E9F6A"/><path d="M394 270 Q404 238 420 232 Q414 254 398 270 Z" fill="#5FAF5A"/><path d="M388 270 Q370 252 368 240 Q384 248 392 270 Z" fill="#5FAF5A"/>
+        <rect x="104" y="276" width="38" height="24" rx="4" fill="#FFF6E8"/><path d="M142 282 Q152 282 152 290 Q152 296 142 296" stroke="#FFF6E8" stroke-width="4" fill="none"/>'''
     if c["room"] == "devroom":
         return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient>
         <radialGradient id="neon" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="{c["accent"]}" stop-opacity="0.35"/><stop offset="1" stop-color="{c["accent"]}" stop-opacity="0"/></radialGradient></defs>
@@ -130,6 +153,23 @@ def backdrop(c):
     return b
 
 def body(c):
+    if c["outfit_style"] == "apron":
+        stripes = ''.join(f'<path d="M{x} 470 L{x-10} 640" stroke="{c["outfit_shade"]}" stroke-width="5"/>' for x in range(70, 400, 22))
+        return f'''
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 482 L268 446 C352 464 404 524 404 640 Z" fill="{c["outfit"]}"/>
+    <clipPath id="tor"><path d="M36 640 C36 524 88 464 172 446 L220 482 L268 446 C352 464 404 524 404 640 Z"/></clipPath>
+    <g clip-path="url(#tor)" opacity="0.55">{stripes}</g>
+    <path d="M172 446 L220 482 L268 446 L258 440 L220 470 L182 440 Z" fill="{c["outfit_shade"]}"/>
+    <path d="M168 452 L184 520" stroke="{c["apron_shade"]}" stroke-width="9" stroke-linecap="round"/><path d="M272 452 L256 520" stroke="{c["apron_shade"]}" stroke-width="9" stroke-linecap="round"/>
+    <path d="M160 520 L280 520 L300 640 L140 640 Z" fill="{c["apron"]}"/>
+    <path d="M160 520 L280 520" stroke="{c["apron_shade"]}" stroke-width="5"/>
+    <rect x="182" y="566" width="76" height="46" rx="6" fill="{c["apron_shade"]}"/>
+    <rect x="196" y="548" width="7" height="32" rx="2" fill="{c["accent"]}"/><path d="M196 548 L199.5 540 L203 548 Z" fill="#F3E3C8"/>
+    <rect x="210" y="552" width="30" height="26" rx="2" fill="#FFF6E8"/><rect x="214" y="558" width="20" height="3" rx="1.5" fill="#9AA6B2"/><rect x="214" y="565" width="14" height="3" rx="1.5" fill="#9AA6B2"/>
+    <text x="220" y="598" font-family="Inter" font-weight="800" font-size="12" fill="#F3E3C8" text-anchor="middle" opacity="0.9">EST. 2019</text>
+    <path d="M70 640 C74 590 86 560 104 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M370 640 C366 590 354 560 336 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>'''
     if c["outfit_style"] == "zip_hoodie":
         return f'''
     <ellipse cx="220" cy="452" rx="122" ry="50" fill="{c["outfit"]}"/><ellipse cx="220" cy="448" rx="94" ry="36" fill="{c["outfit_shade"]}"/>
@@ -223,6 +263,10 @@ def head(c, mouth, blink):
             a = math.pi * (1.05 - 1.1 * i / 12)
             x, y = 220 + 104 * math.cos(a), 250 - 100 * math.sin(a)
             hair += f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{27 if 2 < i < 10 else 22}" fill="{c["hair"]}"/>'
+    elif c["hair_style"] == "waves":
+        hair = (f'<path d="M108 420 C80 360 96 300 104 250 C112 176 170 140 222 142 C286 140 344 186 338 260 C346 310 362 360 330 420 C316 380 318 340 316 300 C314 250 300 224 282 212 C250 232 194 230 160 206 C138 236 126 270 126 310 C124 350 126 386 108 420 Z" fill="{c["hair"]}"/>'
+                f'<path d="M130 196 C170 160 270 156 312 196" stroke="{c["accent"]}" stroke-width="12" fill="none" stroke-linecap="round"/>'
+                f'<path d="M114 330 Q104 360 116 392 M326 330 Q338 360 326 392" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.15" stroke-linecap="round"/>')
     elif c["hair_style"] == "bob":
         hair = f'<path d="M112 330 C92 190 168 140 222 144 C290 140 352 190 330 330 L304 336 C314 280 304 236 286 216 C252 236 196 234 160 210 C140 240 130 280 138 336 Z" fill="{c["hair"]}"/>'
     elif c["hair_style"] == "quiff":

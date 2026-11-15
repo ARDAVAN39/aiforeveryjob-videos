@@ -76,9 +76,28 @@
     {
       "slug": "small-business-owners",
       "title": "AI for Small Business Owners in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-15T16:20:26Z",
-      "episode_module": "small_business_owners"
+      "status": "rendered",
+      "episode_module": "small_business_owners",
+      "file": "videos/AI-for-Small-Business-Owners-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:28 The inbox and reviews",
+        "1:13 Words that sell",
+        "2:07 A week of posts",
+        "2:50 Notes into checklists",
+        "3:27 Hiring and day one",
+        "4:09 Quotes and reminders",
+        "4:50 Listen and learn",
+        "5:31 Three rules",
+        "6:13 Wrap-up"
+      ],
+      "tools": [
+        "Gemini in Gmail (Google Workspace)",
+        "Shopify Sidekick",
+        "Canva Magic Studio (Magic Write, Magic Design, resize)",
+        "ChatGPT",
+        "Claude"
+      ]
     },
     {
       "slug": "dentists",
