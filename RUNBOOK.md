@@ -2,7 +2,7 @@
 
 Channel: https://www.youtube.com/@AIForEveryJob (Studio channel id `UCm6lpFy3y5xQXUUItmwjMXg`).
 The owner has asked for this to run fully on its own: do not ask him to review, approve or upload anything.
-Publish at most one video per run. Never publish anything that failed fact-checking or looks broken.
+The owner wants continuous production: runs fire every hour, and each run produces and publishes one video. Never publish anything that failed fact-checking or looks broken.
 
 ## 0. Setup (fresh workspace every run)
 
@@ -15,9 +15,12 @@ curl -sSL -o voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/release
 ```
 Fonts: Inter must exist at `/usr/share/fonts/opentype/inter/`; check with `fc-list | grep -i inter`.
 
-## 1. Pick the episode
+## 1. Pick the episode (runs can overlap, so claim first)
 
-Read `queue.json`. If an item has status `rendered`, skip to step 6 and publish it. Otherwise take the first `todo` item and produce it (steps 2 to 5).
+Read `queue.json`. Runs start hourly and a run can take longer than an hour, so:
+- If an item has status `rendered`, publish it first (step 6), then continue to produce the next one in the same run.
+- To produce, take the first `todo` item, or an `in_progress` item whose `claimed_at` is more than 3 hours old. Set it to `in_progress` with `claimed_at` (UTC ISO time), then commit and push straight away. If the push is rejected because another run pushed first, run `git pull --rebase`, re-read the queue and pick again.
+- If no `todo` items are left, append 10 new professions to the queue, each with a `note` where the topic needs limits. Pick widely useful jobs not yet covered, such as pilots, farmers, police officers, social workers, translators, photographers, video editors, data analysts, product managers, project managers, consultants, event planners, fitness trainers, psychologists, veterinarians, engineers, scientists, librarians, retail workers, logistics and drivers. Mix in some cross-cutting episodes too, for example "AI for Your Job Interview" or "AI for Learning a New Language at Work".
 
 ## 2. Research and script (subagent: researcher and scriptwriter)
 
@@ -79,6 +82,10 @@ d.querySelector('tp-yt-paper-radio-button[name="VIDEO_MADE_FOR_KIDS_NOT_MFK"]').
 4. DESC: two-sentence summary; a `Chapters` list with real timestamps (cumulative scene durations from `build.py plan` or the `rendered` log lines, first one `0:00`); the tools mentioned; the channel line; this disclosure line: "Made with AI tools: the script was researched and written with AI assistance, and the narration and animated presenter are AI-generated."; and three hashtags.
 5. Click `#next-button` three times (about 1.8 seconds apart), then click `tp-yt-paper-radio-button[name="PUBLIC"]` and `#done-button`. Upload processing does not need to finish first.
 6. Verify in the Studio content list (`ytcp-video-row`, visibility cell says `Public`). Record `youtube_id` (from the `youtu.be` link in the dialog or the row link), the `published` date and `status: published` in `queue.json`; commit and push.
+
+## Pacing
+
+Publish whenever a video is ready. Never upload the same file twice: check `queue.json` and the Studio content list for the title first.
 
 ## Failure handling
 
