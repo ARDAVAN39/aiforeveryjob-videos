@@ -133,7 +133,7 @@
     {
       "slug": "lawyers",
       "title": "AI for Lawyers in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Stress confidentiality and checking every citation.",
       "episode_module": "lawyers",
       "file": "videos/AI-for-Lawyers-in-2026.mp4",
@@ -158,7 +158,9 @@
         "Microsoft Copilot in Word",
         "Claude for Word",
         "ChatGPT"
-      ]
+      ],
+      "youtube_id": "LR8vEPUNBUU",
+      "published": "2026-11-15"
     },
     {
       "slug": "nurses",
