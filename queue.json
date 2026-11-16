@@ -350,7 +350,7 @@
     {
       "slug": "real-estate-agents",
       "title": "AI for Real Estate Agents in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Workflow, marketing and client communication only. No financial, legal or valuation advice; fair-housing compliance and checking listing facts.",
       "episode_module": "real_estate_agents",
       "file": "videos/AI-for-Real-Estate-Agents-in-2026.mp4",
@@ -371,7 +371,9 @@
         "Canva Magic Resize",
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "youtube_id": "HIkuQP2Oyqc",
+      "published": "2026-11-16"
     },
     {
       "slug": "researchers",
