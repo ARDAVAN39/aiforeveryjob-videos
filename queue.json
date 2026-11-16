@@ -322,7 +322,7 @@
     {
       "slug": "hr",
       "title": "AI for HR Professionals in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "hr",
       "file": "videos/AI-for-HR-Professionals-in-2026.mp4",
       "note": "Workflow only, no legal advice. Humans make hiring and people decisions; protect personal data.",
@@ -343,7 +343,9 @@
         "LinkedIn Hiring Assistant",
         "Employee Self-Service agent for Microsoft 365 Copilot",
         "Gemini in Google Forms and Sheets"
-      ]
+      ],
+      "youtube_id": "GYxJEdxoGqA",
+      "published": "2026-11-16"
     },
     {
       "slug": "real-estate-agents",
