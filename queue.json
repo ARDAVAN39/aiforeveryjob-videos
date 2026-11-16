@@ -342,7 +342,9 @@
     {
       "slug": "real-estate-agents",
       "title": "AI for Real Estate Agents in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-16T12:22:21Z",
+      "note": "Workflow, marketing and client communication only. No financial, legal or valuation advice; fair-housing compliance and checking listing facts."
     },
     {
       "slug": "researchers",
