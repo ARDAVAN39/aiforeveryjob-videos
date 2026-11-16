@@ -466,7 +466,9 @@
     {
       "slug": "architects",
       "title": "AI for Architects in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-16T21:20:15Z",
+      "note": "Design workflow, admin, client communication and learning. No structural, code-compliance or legal advice; licensed professionals own the design."
     },
     {
       "slug": "pharmacists",
