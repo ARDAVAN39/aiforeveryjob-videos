@@ -498,8 +498,9 @@
     {
       "slug": "pharmacists",
       "title": "AI for Pharmacists in 2026",
-      "status": "todo",
-      "note": "Workflow and admin only. No dosing or clinical advice."
+      "status": "in_progress",
+      "note": "Workflow and admin only. No dosing or clinical advice.",
+      "claimed_at": "2026-11-16T22:19:44Z"
     },
     {
       "slug": "chefs",
