@@ -289,7 +289,8 @@
     {
       "slug": "sales",
       "title": "AI for Salespeople in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-16T10:19:51Z"
     },
     {
       "slug": "hr",
