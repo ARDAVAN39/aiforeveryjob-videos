@@ -374,8 +374,32 @@
     {
       "slug": "researchers",
       "title": "AI for Researchers in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-16T15:23:21Z"
+      "status": "rendered",
+      "episode_module": "researchers",
+      "file": "videos/AI-for-Researchers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:29 Map the field",
+        "1:12 Read with sources",
+        "2:04 Plan the study",
+        "2:58 Analysis and code",
+        "3:38 Write in your voice",
+        "4:17 Submit and review",
+        "5:01 Grants and outreach",
+        "5:40 Three rules",
+        "6:20 Wrap-up"
+      ],
+      "tools": [
+        "Elicit",
+        "Research Rabbit",
+        "ChatGPT deep research",
+        "Gemini Deep Research",
+        "Gemini Notebook (formerly NotebookLM)",
+        "Scite Smart Citations",
+        "Jupyter AI",
+        "Overleaf AI features",
+        "Zotero retracted-item alerts"
+      ]
     },
     {
       "slug": "customer-support",

@@ -52,7 +52,10 @@ HR = dict(skin="#E0B48C", skin_shade="#C8976E", hair="#C9C6C2", outfit="#E9735A"
 REALTOR = dict(skin="#D8A27C", skin_shade="#BE875F", hair="#8A3B22", outfit="#5B3A8C", outfit_shade="#46296F",
     accent="#F2A541", top="#FBF4E6", gold="#E0A526", wall_top="#FFF7DA", wall_bot="#F1DDA4", room="open_house", outfit_style="open_blazer",
     hair_style="long_curly", glasses=False, earrings_stud="#E0A526")
-PRESENTERS = {"realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
+RESEARCHER = dict(skin="#C99872", skin_shade="#AE7D58", hair="#B9B4AC", outfit="#F7F8FA", outfit_shade="#D3DAE2",
+    accent="#3A7CA5", sweater="#3B5B4A", sweater_shade="#2C4638", wall_top="#E4EEF0", wall_bot="#B9CDD2", room="lab", outfit_style="lab_coat",
+    hair_style="receding", glasses=True, beard=True)
+PRESENTERS = {"researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -87,6 +90,31 @@ def _tooth(cx, cy, k, fill, stroke="none", sw=0):
     return f'<path d="{d}" transform="translate({cx} {cy}) scale({k})" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round"/>'
 
 def backdrop(c):
+    if c["room"] == "lab":
+        pts = [(36, 160), (48, 150), (58, 152), (66, 138), (78, 132), (88, 128), (96, 116), (108, 110), (118, 100), (128, 96), (52, 140), (100, 124), (72, 146), (122, 112)]
+        dots = ''.join(f'<circle cx="{x}" cy="{y}" r="3.5" fill="{"#E76F51" if i % 4 == 0 else "#3A7CA5"}"/>' for i, (x, y) in enumerate(pts))
+        flasks = ''
+        for x, col, h in [(326, "#2EC4B6", 30), (360, "#F2B63D", 22), (394, "#E76F51", 26)]:
+            flasks += f'<path d="M{x+8} 96 L{x+8} 114 L{x-4} 140 Q{x-6} 146 {x} 146 L{x+24} 146 Q{x+30} 146 {x+28} 140 L{x+16} 114 L{x+16} 96 Z" fill="#FFFFFF" opacity="0.85" stroke="#56707A" stroke-width="2"/>'
+            flasks += f'<path d="M{x-1} {146-h*0.55:.0f} L{x+25} {146-h*0.55:.0f} L{x+28} 140 Q{x+30} 146 {x+24} 146 L{x} 146 Q{x-6} 146 {x-4} 140 Z" fill="{col}"/>'
+        journals = ''.join(f'<rect x="{x}" y="{196-h}" width="{w}" height="{h}" rx="2" fill="{col}"/>' for x, w, h, col in [(322, 14, 40, "#3A7CA5"), (338, 12, 46, "#3B5B4A"), (352, 16, 38, "#C8553D"), (370, 12, 44, "#F2B63D"), (384, 14, 40, "#56707A")])
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/>
+        <rect x="16" y="52" width="136" height="146" rx="6" fill="#FFFFFF" stroke="#56707A" stroke-width="3"/>
+        <path d="M30 70 L30 176 L142 176" stroke="#2B3A42" stroke-width="2.5" fill="none"/>
+        <path d="M32 166 L140 92" stroke="#E76F51" stroke-width="2.5" stroke-dasharray="6 4"/>{dots}
+        <rect x="30" y="184" width="50" height="5" rx="2" fill="#2B3A42" opacity="0.5"/>
+        <rect x="312" y="146" width="116" height="7" rx="2" fill="#56707A"/>{flasks}
+        <rect x="312" y="196" width="116" height="7" rx="2" fill="#56707A"/>{journals}
+        <path d="M404 196 L418 160" stroke="#3A7CA5" stroke-width="9" stroke-linecap="round"/>
+        <rect x="0" y="292" width="{PW}" height="348" fill="#3E4E56"/><rect x="0" y="286" width="{PW}" height="8" fill="#26323A"/>
+        <rect x="18" y="270" width="70" height="8" rx="1" fill="#FFFFFF"/><rect x="22" y="262" width="66" height="8" rx="1" fill="#F4F1DE"/><rect x="16" y="278" width="74" height="8" rx="1" fill="#FFFFFF"/>
+        <rect x="30" y="250" width="44" height="12" rx="2" fill="#3B5B4A" transform="rotate(-4 52 256)"/>
+        <rect x="104" y="258" width="18" height="28" rx="3" fill="#FFFFFF" opacity="0.85" stroke="#56707A" stroke-width="1.5"/><rect x="106" y="272" width="14" height="12" rx="2" fill="#7EC8E3"/>
+        <rect x="350" y="276" width="56" height="10" rx="3" fill="#2B3A42"/><path d="M394 276 L394 222 Q394 214 386 214" stroke="#2B3A42" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <rect x="360" y="206" width="14" height="40" rx="4" fill="#E6ECF1" stroke="#2B3A42" stroke-width="3" transform="rotate(-20 367 226)"/>
+        <rect x="356" y="252" width="34" height="6" rx="2" fill="#2B3A42"/><circle cx="398" cy="244" r="6" fill="#56707A"/>
+        <path d="M366 248 L368 262" stroke="#2B3A42" stroke-width="4"/>'''
     if c["room"] == "open_house":
         keys = ''.join(f'<circle cx="{x}" cy="212" r="3.5" fill="#6A5242"/><path d="M{x} 214 L{x} 224" stroke="#8A8F98" stroke-width="2"/><circle cx="{x}" cy="230" r="6.5" fill="none" stroke="{col}" stroke-width="3.5"/><path d="M{x} 237 L{x} 256 M{x} 248 L{x+5} 248 M{x} 254 L{x+5} 254" stroke="{col}" stroke-width="3.5" stroke-linecap="round"/>' for x, col in [(372, "#E0A526"), (394, "#9AA6B2"), (416, "#E0A526")])
         return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient>
@@ -403,6 +431,24 @@ def body(c):
     <path d="M304 566 L304 559 L311 553 L318 559 L318 566 Z" fill="{c["accent"]}"/><rect x="324" y="556" width="24" height="4" rx="2" fill="#3D3552"/><rect x="324" y="564" width="16" height="4" rx="2" fill="#9AA6B2"/></g>
     <path d="M70 640 C74 590 86 560 104 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>
     <path d="M370 640 C366 590 354 560 336 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>"""
+    if c["outfit_style"] == "lab_coat":
+        return f"""
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 482 L268 446 C352 464 404 524 404 640 Z" fill="{c["outfit"]}"/>
+    <path d="M176 444 L220 600 L264 444 Q220 474 176 444 Z" fill="{c["sweater"]}"/>
+    <path d="M182 444 Q220 478 258 444" stroke="{c["sweater_shade"]}" stroke-width="7" fill="none"/>
+    <path d="M190 446 Q220 470 250 446 L246 440 Q220 460 194 440 Z" fill="#FFFFFF"/>
+    <path d="M172 446 L146 516 L188 550 L212 640 L172 640 L122 524 Z" fill="{c["outfit_shade"]}"/>
+    <path d="M268 446 L294 516 L252 550 L228 640 L268 640 L318 524 Z" fill="{c["outfit_shade"]}"/>
+    <path d="M172 446 L146 516 L188 550 L220 604 L178 448 Z" fill="{c["outfit"]}" stroke="{c["outfit_shade"]}" stroke-width="3"/>
+    <path d="M268 446 L294 516 L252 550 L220 604 L262 448 Z" fill="{c["outfit"]}" stroke="{c["outfit_shade"]}" stroke-width="3"/>
+    <rect x="276" y="566" width="50" height="44" rx="4" fill="none" stroke="{c["outfit_shade"]}" stroke-width="3"/>
+    <rect x="286" y="544" width="7" height="32" rx="2" fill="{c["accent"]}"/><rect x="297" y="548" width="7" height="28" rx="2" fill="#E76F51"/><rect x="308" y="550" width="7" height="26" rx="2" fill="#2B3A42"/>
+    <rect x="112" y="556" width="50" height="34" rx="4" fill="#FFFFFF" stroke="#9AA6B2" stroke-width="1.5"/>
+    <rect x="112" y="556" width="50" height="9" rx="4" fill="{c["accent"]}"/><rect x="112" y="561" width="50" height="4" fill="{c["accent"]}"/>
+    <circle cx="125" cy="577" r="6" fill="#DCE3E8"/><rect x="135" y="572" width="20" height="4" rx="2" fill="#2B3A42"/><rect x="135" y="580" width="14" height="4" rx="2" fill="#9AA6B2"/>
+    <path d="M70 640 C74 590 86 560 104 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M370 640 C366 590 354 560 336 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>"""
     if c["outfit_style"] == "blouse_scarf":
         dots = ''.join(f'<circle cx="{x}" cy="{y}" r="3" fill="{c["scarf_dot"]}"/>' for x, y in [(190, 452), (206, 462), (234, 462), (250, 452), (212, 488), (226, 500), (218, 520)])
         return f"""
@@ -633,6 +679,11 @@ def head(c, mouth, blink):
         hair = (f'<path d="M122 292 C102 176 176 138 224 140 C294 138 346 190 318 292 C316 250 306 224 288 208 C258 212 216 206 192 190 C176 214 150 232 136 246 C128 260 124 276 122 292 Z" fill="{c["hair"]}"/>'
                 f'<path d="M190 150 C196 170 196 182 192 192" stroke="#000000" stroke-width="2" opacity="0.25" fill="none"/>'
                 f'<path d="M214 152 C250 146 288 162 302 190 M150 196 C158 180 170 166 184 158" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.2" stroke-linecap="round"/>')
+    elif c["hair_style"] == "receding":
+        hair = (f'<path d="M124 282 C112 226 126 196 150 182 C152 210 150 236 144 262 C136 268 128 274 124 282 Z" fill="{c["hair"]}"/>'
+                f'<path d="M316 282 C328 226 314 196 290 182 C288 210 290 236 296 262 C304 268 312 274 316 282 Z" fill="{c["hair"]}"/>'
+                f'<path d="M150 182 C176 164 200 170 206 176 C190 176 168 182 152 196 Z" fill="{c["hair"]}"/><path d="M290 182 C264 164 240 170 234 176 C250 176 272 182 288 196 Z" fill="{c["hair"]}"/>'
+                f'<path d="M136 230 C134 250 134 266 138 280 M304 230 C306 250 306 266 302 280" stroke="#8E8A86" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>')
     elif c["hair_style"] == "pixie":
         hair = (f'<path d="M124 278 C110 184 170 146 222 146 C284 144 334 190 318 278 C314 244 304 222 290 210 C262 214 236 206 220 196 C196 214 166 222 148 216 C136 232 128 254 124 278 Z" fill="{c["hair"]}"/>'
                 f'<path d="M150 218 C140 170 178 138 228 138 C280 138 312 170 306 214 C290 196 266 190 244 194 C226 206 188 222 150 218 Z" fill="{c["hair"]}"/>'
