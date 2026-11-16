@@ -289,8 +289,29 @@
     {
       "slug": "sales",
       "title": "AI for Salespeople in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-16T10:19:51Z"
+      "status": "rendered",
+      "episode_module": "sales",
+      "file": "videos/AI-for-Salespeople-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:35 Research the account",
+        "1:24 The first outreach",
+        "2:27 The discovery call",
+        "3:24 Follow-up and proposal",
+        "4:12 Prep for objections",
+        "4:59 Forecast and CRM hygiene",
+        "5:55 Handover and renewal",
+        "6:38 Three rules",
+        "7:20 Wrap-up"
+      ],
+      "tools": [
+        "LinkedIn Sales Navigator (Account IQ, Lead IQ, Message Assist)",
+        "HubSpot Prospecting Agent",
+        "HubSpot Breeze Assistant",
+        "Gong (call brief, outline, Gong Assistant, AI Deal Predictor)",
+        "Salesforce Agentforce Sales Coach",
+        "Gemini Help me write in Gmail"
+      ]
     },
     {
       "slug": "hr",
