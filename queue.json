@@ -259,7 +259,7 @@
     {
       "slug": "designers",
       "title": "AI for Designers in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "designers",
       "file": "videos/AI-for-Designers-in-2026.mp4",
       "chapters": [
@@ -286,7 +286,9 @@
         "Framer AI",
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "youtube_id": "XonH8-g5Xf0",
+      "published": "2026-11-16"
     },
     {
       "slug": "sales",
