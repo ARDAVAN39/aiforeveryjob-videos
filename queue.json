@@ -406,8 +406,31 @@
     {
       "slug": "customer-support",
       "title": "AI for Customer Support in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-16T16:21:04Z"
+      "status": "rendered",
+      "episode_module": "customer_support",
+      "file": "videos/AI-for-Customer-Support-in-2026.mp4",
+      "note": "Workflow only, no legal advice. Protect customer data, always offer a human path, people own refunds and policy.",
+      "chapters": [
+        "0:00 Intro",
+        "0:33 Triage the morning queue",
+        "1:18 Reply in her words",
+        "2:05 Fix the help centre gap",
+        "2:50 An AI agent, with an exit",
+        "3:47 When Marta gets angry",
+        "4:30 QA and coaching",
+        "5:14 Tell the product team",
+        "5:54 Three rules",
+        "6:36 Wrap-up"
+      ],
+      "tools": [
+        "Zendesk AI (intelligent triage, ticket summaries, Enhance writing)",
+        "Zendesk QA (AutoQA, Spotlight)",
+        "Freshdesk Freddy AI Copilot (Summarizer, Article suggester)",
+        "Intercom Copilot",
+        "Intercom Fin AI Agent",
+        "ChatGPT",
+        "Claude"
+      ]
     },
     {
       "slug": "journalists",
