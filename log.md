@@ -28,3 +28,4 @@
 - 2026-11-16: AI for HR Professionals in 2026 rendered (7:10, presenter: woman with silver pixie cut and plum cat-eye glasses in a coral blouse, teal neck scarf and ID lanyard, new 'people_office' room/'blouse_scarf' outfit/'pixie' hair/'cat_eye' glasses, voice af_heart after af_nicole ran 11 min; one-role vacancy-to-exit-interview structure); fact-check made 3 small edits (Gemini themes are in Sheets, softened 'never rejects' to a rule); left status rendered (upload limit). Backlog: Accountants, Designers, Salespeople, HR.
 - 2026-11-16: AI for Accountants in 2026 published (upload limit lifted), https://youtu.be/QMFLaMKGsn8
 - 2026-11-16: AI for Designers in 2026 published (15:20 UTC), https://youtu.be/XonH8-g5Xf0
+- 2026-11-16: AI for Salespeople in 2026 published (15:40 UTC), https://youtu.be/jorQjadBVYw

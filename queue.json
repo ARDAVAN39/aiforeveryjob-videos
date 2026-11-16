@@ -293,7 +293,7 @@
     {
       "slug": "sales",
       "title": "AI for Salespeople in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "sales",
       "file": "videos/AI-for-Salespeople-in-2026.mp4",
       "chapters": [
@@ -315,7 +315,9 @@
         "Gong (call brief, outline, Gong Assistant, AI Deal Predictor)",
         "Salesforce Agentforce Sales Coach",
         "Gemini Help me write in Gmail"
-      ]
+      ],
+      "youtube_id": "jorQjadBVYw",
+      "published": "2026-11-16"
     },
     {
       "slug": "hr",
