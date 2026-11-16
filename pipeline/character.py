@@ -58,7 +58,10 @@ RESEARCHER = dict(skin="#C99872", skin_shade="#AE7D58", hair="#B9B4AC", outfit="
 SUPPORT = dict(skin="#D6A27A", skin_shade="#BC875F", hair="#1A1418", outfit="#3157C9", outfit_shade="#2443A3",
     accent="#FFC857", wall_top="#E3F4EF", wall_bot="#B7DCD1", room="support_desk", outfit_style="polo",
     hair_style="space_buns", glasses=False, headset="#2B2F3A")
-PRESENTERS = {"support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
+JOURNALIST = dict(skin="#C68E62", skin_shade="#AA7349", hair="#2A1E18", outfit="#5E6B3F", outfit_shade="#485330",
+    accent="#E63946", tee="#D5D9DE", tee_shade="#B4BAC2", wall_top="#3A4658", wall_bot="#1E2532", room="newsroom", outfit_style="field_jacket",
+    hair_style="tousled", glasses=False, stubble=True, mustache=True)
+PRESENTERS = {"journalist": JOURNALIST, "support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -93,6 +96,34 @@ def _tooth(cx, cy, k, fill, stroke="none", sw=0):
     return f'<path d="{d}" transform="translate({cx} {cy}) scale({k})" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round"/>'
 
 def backdrop(c):
+    if c["room"] == "newsroom":
+        clocks = ''
+        for x, lab, ang in [(32, "NYC", 300), (78, "LDN", 60)]:
+            import math
+            hx, hy = x + 11 * math.sin(math.radians(ang)), 184 - 11 * math.cos(math.radians(ang))
+            clocks += f'<circle cx="{x}" cy="184" r="17" fill="#F4F1DE" stroke="#0F141C" stroke-width="3"/><path d="M{x} 184 L{x} 172 M{x} 184 L{hx:.0f} {hy:.0f}" stroke="#0F141C" stroke-width="2.5" stroke-linecap="round"/><text x="{x}" y="216" font-family="Inter" font-weight="800" font-size="9" fill="#C9D2DE" text-anchor="middle">{lab}</text>'
+        clips = ''
+        for x, y, w, h, r in [(326, 70, 40, 50, -4), (374, 66, 42, 36, 3), (330, 132, 36, 44, 2), (378, 114, 38, 54, -3)]:
+            lines = ''.join(f'<rect x="{x+5}" y="{y+12+k*7}" width="{w-10 if k % 2 == 0 else w-18}" height="3" rx="1" fill="#9AA6B2"/>' for k in range(int((h-16)/7)))
+            clips += f'<g transform="rotate({r} {x+w/2} {y+h/2})"><rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#FBFAF5"/><rect x="{x+5}" y="{y+5}" width="{w-10}" height="4" rx="1" fill="#2B3A42"/>{lines}</g>'
+        pins = [(346, 72), (395, 68), (348, 134), (397, 116)]
+        string = '<path d="M346 72 L397 116 L348 134 L395 68" stroke="#E63946" stroke-width="1.8" fill="none"/>'
+        pin_dots = ''.join(f'<circle cx="{x}" cy="{y}" r="4" fill="#E63946"/>' for x, y in pins)
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/>
+        <rect x="12" y="44" width="148" height="104" rx="6" fill="#0F141C"/><rect x="18" y="50" width="136" height="80" rx="3" fill="#24476B"/>
+        <rect x="18" y="50" width="136" height="80" rx="3" fill="#3B6FA0" opacity="0.5"/><circle cx="118" cy="82" r="20" fill="#7FB3E0" opacity="0.5"/>
+        <rect x="24" y="56" width="30" height="12" rx="2" fill="#E63946"/><text x="39" y="65.5" font-family="Inter" font-weight="800" font-size="8" fill="#FFFFFF" text-anchor="middle">LIVE</text>
+        <rect x="18" y="104" width="136" height="16" fill="#F4F1DE"/><rect x="24" y="109" width="78" height="6" rx="2" fill="#1E2532"/>
+        <rect x="18" y="120" width="136" height="10" fill="#E63946"/><rect x="24" y="123.5" width="40" height="3" rx="1" fill="#FFFFFF"/><rect x="70" y="123.5" width="30" height="3" rx="1" fill="#FFFFFF"/><rect x="106" y="123.5" width="42" height="3" rx="1" fill="#FFFFFF"/>
+        <rect x="80" y="148" width="12" height="8" fill="#0F141C"/>{clocks}
+        <rect x="312" y="54" width="118" height="140" rx="4" fill="#B98B5E" stroke="#6E4E31" stroke-width="5"/>{clips}{string}{pin_dots}
+        <rect x="0" y="292" width="{PW}" height="348" fill="#5A4636"/><rect x="0" y="286" width="{PW}" height="8" fill="#3B2C21"/>
+        <path d="M20 286 L32 246 L104 246 L96 286 Z" fill="#2B3A42"/><path d="M28 280 L38 252 L98 252 L92 280 Z" fill="#7FB3E0" opacity="0.7"/><rect x="14" y="284" width="96" height="5" rx="2" fill="#1B232B"/>
+        
+        <rect x="336" y="262" width="56" height="24" rx="2" fill="#FBF3C2" transform="rotate(-6 364 274)"/><path d="M342 266 L384 262 M342 273 L380 269 M343 280 L372 277" stroke="#9AA6B2" stroke-width="2" transform="rotate(-6 364 274)"/>
+        <path d="M352 284 L396 252" stroke="#2B3A42" stroke-width="4" stroke-linecap="round"/>
+        <rect x="402" y="246" width="20" height="40" rx="5" fill="#1B232B"/><circle cx="412" cy="258" r="5" fill="#56707A"/><circle cx="412" cy="276" r="3" fill="#E63946"/>'''
     if c["room"] == "support_desk":
         cols = [("NEW", 22, "#E76F51", 3), ("OPEN", 66, "#FFC857", 2), ("SOLVED", 110, "#2A9D8F", 3)]
         board = ''
@@ -438,6 +469,25 @@ def backdrop(c):
     return b
 
 def body(c):
+    if c["outfit_style"] == "field_jacket":
+        a = c["accent"]
+        return f"""
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 470 L268 446 C352 464 404 524 404 640 Z" fill="{c["tee"]}"/>
+    <path d="M180 446 Q220 492 260 446" stroke="{c["tee_shade"]}" stroke-width="7" fill="none"/>
+    <rect x="212" y="468" width="16" height="48" rx="3" fill="{c["tee_shade"]}"/><circle cx="220" cy="482" r="3" fill="#FFFFFF"/><circle cx="220" cy="502" r="3" fill="#FFFFFF"/>
+    <path d="M36 640 C36 524 88 464 172 446 L184 474 L194 640 Z" fill="{c["outfit"]}"/>
+    <path d="M404 640 C404 524 352 464 268 446 L256 474 L246 640 Z" fill="{c["outfit"]}"/>
+    <path d="M172 442 L146 446 L150 488 L188 480 Z" fill="{c["outfit_shade"]}"/><path d="M268 442 L294 446 L290 488 L252 480 Z" fill="{c["outfit_shade"]}"/>
+    <rect x="98" y="528" width="60" height="58" rx="6" fill="{c["outfit_shade"]}" opacity="0.55"/><path d="M96 528 L160 528 L156 546 L100 546 Z" fill="{c["outfit_shade"]}"/><circle cx="128" cy="540" r="3.5" fill="#2B2F22"/>
+    <rect x="282" y="528" width="60" height="58" rx="6" fill="{c["outfit_shade"]}" opacity="0.55"/><path d="M280 528 L344 528 L340 546 L284 546 Z" fill="{c["outfit_shade"]}"/><circle cx="312" cy="540" r="3.5" fill="#2B2F22"/>
+    <rect x="114" y="512" width="5" height="22" rx="2" fill="#1B2A4A"/><rect x="113" y="510" width="7" height="6" rx="2" fill="{a}"/>
+    <path d="M186 452 L206 560 M254 452 L234 560" stroke="{a}" stroke-width="6" stroke-linecap="round"/>
+    <rect x="194" y="556" width="52" height="64" rx="5" fill="#FFFFFF" stroke="#C9CED6" stroke-width="2"/><rect x="194" y="556" width="52" height="16" rx="5" fill="{a}"/><rect x="194" y="566" width="52" height="6" fill="{a}"/>
+    <text x="220" y="568" font-family="Inter" font-weight="800" font-size="10" fill="#FFFFFF" text-anchor="middle">PRESS</text>
+    <rect x="202" y="580" width="16" height="20" rx="2" fill="#9AA6B2"/><rect x="222" y="582" width="18" height="4" rx="2" fill="#3D3552"/><rect x="222" y="592" width="14" height="4" rx="2" fill="#9AA6B2"/>
+    <path d="M70 640 C74 590 86 560 104 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M370 640 C366 590 354 560 336 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>"""
     if c["outfit_style"] == "polo":
         return f"""
     <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
@@ -714,7 +764,12 @@ def head(c, mouth, blink):
         eyes = '<path d="M163 294 Q178 305 193 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M247 294 Q262 305 277 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/>'
     else:
         eyes = ''.join(f'<ellipse cx="{x}" cy="292" rx="15" ry="17" fill="#FFFFFF"/><circle cx="{x+1}" cy="294" r="9.5" fill="#2E1F18"/><circle cx="{x+4}" cy="290" r="3.2" fill="#FFFFFF"/>' for x in (178, 262))
-    if c["hair_style"] == "space_buns":
+    if c["hair_style"] == "tousled":
+        hair = (f'<path d="M122 282 C106 172 182 146 222 150 C298 144 338 204 318 284 C312 244 300 216 272 204 C232 216 180 216 150 208 C134 228 126 254 122 282 Z" fill="{c["hair"]}"/>'
+                f'<path d="M136 216 C120 166 160 128 206 126 L196 112 L226 124 C240 112 262 110 280 118 L272 128 C306 138 324 170 312 214 C300 202 290 198 280 206 C274 190 260 184 248 198 C240 182 224 180 214 196 C204 182 188 184 180 200 C170 188 152 192 136 216 Z" fill="{c["hair"]}"/>'
+                f'<path d="M208 194 C200 212 204 228 216 236 C212 222 214 208 222 198 Z" fill="{c["hair"]}"/>'
+                f'<path d="M172 158 C196 140 240 134 280 150 M190 178 C214 160 252 158 290 172" stroke="#FFFFFF" stroke-width="3.5" fill="none" opacity="0.14" stroke-linecap="round"/>')
+    elif c["hair_style"] == "space_buns":
         hair = (f'<path d="M122 286 C104 178 172 142 222 142 C290 140 342 190 318 288 C314 248 302 222 284 208 C250 198 198 198 160 206 C140 224 126 254 122 286 Z" fill="{c["hair"]}"/>'
                 f'<path d="M222 146 L222 196" stroke="#000000" stroke-width="2" opacity="0.35"/>'
                 f'<path d="M168 166 C186 154 208 150 216 154 M230 154 C254 150 280 160 296 178" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.15" stroke-linecap="round"/>')
@@ -799,6 +854,8 @@ def head(c, mouth, blink):
         beard = f'<path d="M132 318 C140 380 178 410 220 412 C262 410 300 380 308 318 C298 352 280 368 258 366 Q220 356 182 366 C160 368 142 352 132 318 Z" fill="{c["hair"]}" opacity="0.35"/><path d="M198 337 Q220 330 242 337 Q232 341 220 339 Q208 341 198 337 Z" fill="{c["hair"]}" opacity="0.55"/>'
     if c.get("beard"):
         beard = f'<path d="M126 300 C128 372 170 414 220 416 C270 414 312 372 314 300 C304 340 286 356 264 352 Q220 338 176 352 C154 356 136 340 126 300 Z" fill="{c["hair"]}"/><path d="M190 340 Q205 330 220 336 Q235 330 250 340 Q236 346 220 342 Q204 346 190 340 Z" fill="{c["hair"]}"/>'
+    if c.get("mustache"):
+        beard += f'<path d="M188 340 Q202 324 220 332 Q238 324 252 340 Q238 346 220 340 Q202 346 188 340 Z" fill="{c["hair"]}"/>'
     blush = '0.5' if c["glasses"] else '0.25'
     back = ''
     if c["hair_style"] == "afro":

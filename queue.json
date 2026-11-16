@@ -437,8 +437,31 @@
     {
       "slug": "journalists",
       "title": "AI for Journalists in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-16T20:19:44Z"
+      "status": "rendered",
+      "episode_module": "journalists",
+      "file": "videos/AI-for-Journalists-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:31 Triage the tip",
+        "1:23 Background, with sources",
+        "2:05 From tape to transcript",
+        "2:45 Dig through the documents",
+        "3:27 Is that video real?",
+        "4:10 Package the story",
+        "4:49 Publish, disclose, correct",
+        "5:28 Three rules",
+        "6:10 Wrap-up"
+      ],
+      "tools": [
+        "Gemini Notebook (formerly NotebookLM)",
+        "Trint",
+        "Google Pinpoint",
+        "ChatGPT",
+        "Claude",
+        "InVID-WeVerify plugin",
+        "DeepL"
+      ],
+      "note": "Workflow only; protect sources, verify everything, no legal advice."
     },
     {
       "slug": "architects",
