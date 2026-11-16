@@ -316,8 +316,28 @@
     {
       "slug": "hr",
       "title": "AI for HR Professionals in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-16T11:20:36Z"
+      "status": "rendered",
+      "episode_module": "hr",
+      "file": "videos/AI-for-HR-Professionals-in-2026.mp4",
+      "note": "Workflow only, no legal advice. Humans make hiring and people decisions; protect personal data.",
+      "chapters": [
+        "0:00 Intro",
+        "0:35 Open the vacancy",
+        "1:17 Find candidates, fairly",
+        "2:13 Structured interviews",
+        "2:57 Onboard and grow",
+        "3:38 Questions all year",
+        "4:39 Listen to the team",
+        "5:20 The exit interview",
+        "6:03 Three rules",
+        "6:47 Wrap-up"
+      ],
+      "tools": [
+        "Greenhouse AI (job post description and interview question suggestions)",
+        "LinkedIn Hiring Assistant",
+        "Employee Self-Service agent for Microsoft 365 Copilot",
+        "Gemini in Google Forms and Sheets"
+      ]
     },
     {
       "slug": "real-estate-agents",

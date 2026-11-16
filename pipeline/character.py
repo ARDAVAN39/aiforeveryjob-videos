@@ -46,7 +46,10 @@ DESIGNER = dict(skin="#5C3A24", skin_shade="#47291A", hair="#141010", outfit="#E
 SALES = dict(skin="#B9835A", skin_shade="#9E6A44", hair="#1E1612", outfit="#CFE0F2", outfit_shade="#A9C3DE",
     accent="#F25F4C", tie="#1F3A5F", wall_top="#E6EEF6", wall_bot="#BFD0E2", room="sales_floor", outfit_style="oxford_tie",
     hair_style="slick_back", glasses=False, stubble=True)
-PRESENTERS = {"sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
+HR = dict(skin="#E0B48C", skin_shade="#C8976E", hair="#C9C6C2", outfit="#E9735A", outfit_shade="#C95A43",
+    accent="#2B7A78", scarf="#2B7A78", scarf_dot="#F6D365", wall_top="#F1EAF4", wall_bot="#D3C6DC", room="people_office", outfit_style="blouse_scarf",
+    hair_style="pixie", glasses="cat_eye", earrings_stud="#F6D365")
+PRESENTERS = {"hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -81,6 +84,27 @@ def _tooth(cx, cy, k, fill, stroke="none", sw=0):
     return f'<path d="{d}" transform="translate({cx} {cy}) scale({k})" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round"/>'
 
 def backdrop(c):
+    if c["room"] == "people_office":
+        nodes = [(84, 70, "#2B7A78"), (46, 118, "#E9735A"), (84, 118, "#F6D365"), (122, 118, "#7B6BB0"), (32, 166, "#7B6BB0"), (60, 166, "#2B7A78"), (108, 166, "#E9735A"), (136, 166, "#2B7A78")]
+        lines = '<path d="M84 70 L84 94 M46 94 L122 94 M46 94 L46 118 M84 94 L84 118 M122 94 L122 118 M46 118 L46 142 M32 142 L60 142 M32 142 L32 166 M60 142 L60 166 M122 118 L122 142 M108 142 L136 142 M108 142 L108 166 M136 142 L136 166" stroke="#5A4E66" stroke-width="2.5" fill="none"/>'
+        people = ''.join(f'<circle cx="{x}" cy="{y}" r="11" fill="{col}"/><circle cx="{x}" cy="{y-3}" r="4" fill="#FFFFFF" opacity="0.9"/><path d="M{x-6} {y+7} Q{x} {y} {x+6} {y+7}" fill="#FFFFFF" opacity="0.9"/>' for x, y, col in nodes)
+        cal = ''.join(f'<rect x="{332+(i%4)*21}" y="{116+(i//4)*16}" width="16" height="11" rx="2" fill="{["#F6D365","#DCD3E4","#E9735A","#DCD3E4"][i%4] if i in (2, 5, 11) else "#DCD3E4"}"/>' for i in range(12))
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/>
+        <rect x="14" y="50" width="142" height="138" rx="6" fill="#FFFFFF" stroke="#5A4E66" stroke-width="3"/>
+        {lines}{people}
+        <rect x="316" y="52" width="108" height="150" rx="6" fill="#FFFFFF" stroke="#5A4E66" stroke-width="3"/>
+        <rect x="316" y="52" width="108" height="36" rx="6" fill="#2B7A78"/><rect x="316" y="76" width="108" height="12" fill="#2B7A78"/>
+        <text x="370" y="76" font-family="Inter" font-weight="800" font-size="15" fill="#FFFFFF" text-anchor="middle">WELCOME</text>
+        <rect x="332" y="98" width="56" height="7" rx="3" fill="#5A4E66" opacity="0.6"/>{cal}
+        <path d="M338 178 L346 186 L360 172" stroke="#2B7A78" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="366" y="176" width="44" height="6" rx="3" fill="#5A4E66" opacity="0.45"/>
+        <rect x="0" y="292" width="{PW}" height="348" fill="#8C6E5A"/><rect x="0" y="288" width="{PW}" height="8" fill="#6A5242"/>
+        <rect x="20" y="262" width="62" height="10" rx="2" fill="#E9735A"/><rect x="24" y="252" width="56" height="10" rx="2" fill="#F6D365"/><rect x="18" y="272" width="66" height="16" rx="2" fill="#7B6BB0"/>
+        <rect x="26" y="276" width="20" height="4" rx="2" fill="#FFFFFF" opacity="0.7"/>
+        <path d="M104 288 L100 262 L132 262 L128 288 Z" fill="#2B7A78"/><path d="M116 262 Q104 236 110 222 Q120 240 118 262 Z" fill="#4E9F6A"/><path d="M118 262 Q126 234 142 228 Q136 250 122 262 Z" fill="#5FAF5A"/><path d="M112 262 Q96 248 94 236 Q108 244 116 262 Z" fill="#5FAF5A"/>
+        <rect x="352" y="256" width="28" height="32" rx="4" fill="#F1EAF4" stroke="#7B6BB0" stroke-width="2"/><path d="M380 264 Q392 264 392 273 Q392 282 380 282" stroke="#7B6BB0" stroke-width="4" fill="none"/>
+        <path d="M361 266 Q366 262 371 266 Q371 272 366 276 Q361 272 361 266 Z" fill="#E9735A"/>
+        <path d="M360 250 Q364 242 360 234 M370 250 Q374 242 370 234" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>'''
     if c["room"] == "sales_floor":
         cols = [("#7A8CA8", 3), ("#3D7BD9", 3), ("#F2B63D", 2), ("#2EAD6B", 2)]
         board = ''.join(f'<rect x="{28+i*31}" y="80" width="27" height="6" rx="3" fill="{col}"/>' + ''.join(f'<rect x="{28+i*31}" y="{92+j*26}" width="27" height="21" rx="3" fill="#FFFFFF" stroke="{col}" stroke-width="2"/><rect x="{32+i*31}" y="{98+j*26}" width="17" height="3" rx="1.5" fill="#55657E"/><rect x="{32+i*31}" y="{104+j*26}" width="11" height="3" rx="1.5" fill="#9AA6B8"/>' for j in range(n)) for i, (col, n) in enumerate(cols))
@@ -338,6 +362,23 @@ def body(c):
     pony = ''
     if c["hair_style"] == "ponytail":
         pony = f'<path d="M300 226 C352 236 360 300 340 360 C330 392 338 420 350 440 C318 430 304 392 312 350 C320 300 312 262 290 240 Z" fill="{c["hair"]}"/><path d="M318 268 C332 300 330 340 322 372" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.15" stroke-linecap="round"/>'
+    if c["outfit_style"] == "blouse_scarf":
+        dots = ''.join(f'<circle cx="{x}" cy="{y}" r="3" fill="{c["scarf_dot"]}"/>' for x, y in [(190, 452), (206, 462), (234, 462), (250, 452), (212, 488), (226, 500), (218, 520)])
+        return f"""
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 470 L268 446 C352 464 404 524 404 640 Z" fill="{c["outfit"]}"/>
+    {''.join(f'<path d="M{x} 520 Q{x+6} 580 {x} 640" stroke="{c["outfit_shade"]}" stroke-width="2.5" fill="none" opacity="0.5"/>' for x in (110, 140, 300, 330))}
+    <path d="M176 444 Q220 482 264 444 L258 470 Q220 498 182 470 Z" fill="{c["scarf"]}"/>
+    <path d="M210 476 L196 540 L214 546 L222 488 Z" fill="{c["scarf"]}"/><path d="M226 480 L242 530 L226 538 L216 488 Z" fill="{c["scarf"]}" opacity="0.92"/>
+    <ellipse cx="220" cy="482" rx="12" ry="9" fill="{c["scarf"]}" stroke="#1F5B59" stroke-width="2"/>{dots}
+    <path d="M168 452 C164 520 186 566 248 586" stroke="#3D3552" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M272 452 C278 520 268 560 252 586" stroke="#3D3552" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <rect x="243" y="582" width="18" height="10" rx="3" fill="#9AA6B2"/>
+    <rect x="226" y="590" width="52" height="40" rx="5" fill="#FFFFFF" stroke="#C9CED6" stroke-width="2"/>
+    <rect x="226" y="590" width="52" height="10" rx="5" fill="{c["accent"]}"/><rect x="226" y="596" width="52" height="4" fill="{c["accent"]}"/>
+    <circle cx="240" cy="614" r="7" fill="#DCD3E4"/><rect x="252" y="609" width="20" height="4" rx="2" fill="#3D3552"/><rect x="252" y="617" width="14" height="4" rx="2" fill="#9AA6B2"/>
+    <path d="M70 640 C74 590 86 560 104 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M370 640 C366 590 354 560 336 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>"""
     if c["outfit_style"] == "oxford_tie":
         return f"""
     <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
@@ -547,7 +588,12 @@ def head(c, mouth, blink):
         eyes = '<path d="M163 294 Q178 305 193 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M247 294 Q262 305 277 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/>'
     else:
         eyes = ''.join(f'<ellipse cx="{x}" cy="292" rx="15" ry="17" fill="#FFFFFF"/><circle cx="{x+1}" cy="294" r="9.5" fill="#2E1F18"/><circle cx="{x+4}" cy="290" r="3.2" fill="#FFFFFF"/>' for x in (178, 262))
-    if c["hair_style"] == "afro":
+    if c["hair_style"] == "pixie":
+        hair = (f'<path d="M124 278 C110 184 170 146 222 146 C284 144 334 190 318 278 C314 244 304 222 290 210 C262 214 236 206 220 196 C196 214 166 222 148 216 C136 232 128 254 124 278 Z" fill="{c["hair"]}"/>'
+                f'<path d="M150 218 C140 170 178 138 228 138 C280 138 312 170 306 214 C290 196 266 190 244 194 C226 206 188 222 150 218 Z" fill="{c["hair"]}"/>'
+                f'<path d="M168 196 C190 168 236 156 276 166 M196 208 C220 186 252 180 288 188" stroke="#8E8A86" stroke-width="3" fill="none" opacity="0.55" stroke-linecap="round"/>'
+                f'<path d="M180 158 C206 146 244 146 270 156" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.35" stroke-linecap="round"/>')
+    elif c["hair_style"] == "afro":
         hair = (f'<path d="M128 262 C124 200 168 168 222 168 C276 168 318 200 314 262 C304 226 286 206 262 200 C236 210 204 210 178 200 C154 208 136 230 128 262 Z" fill="{c["hair"]}"/>'
                 f'<path d="M150 188 C180 166 260 164 292 188" stroke="{c["accent"]}" stroke-width="10" fill="none" stroke-linecap="round"/>')
     elif c["hair_style"] == "ponytail":
@@ -600,6 +646,8 @@ def head(c, mouth, blink):
     else:
         hair = f'<circle cx="220" cy="146" r="38" fill="{c["hair"]}"/><path d="M119 286 C104 176 188 150 228 160 C300 148 344 210 321 292 C312 250 292 226 262 216 C230 242 172 246 140 236 C128 250 122 268 119 286 Z" fill="{c["hair"]}"/>'
     glasses = '<rect x="149" y="272" width="58" height="42" rx="10" fill="none" stroke="#1B2A4A" stroke-width="5"/><rect x="233" y="272" width="58" height="42" rx="10" fill="none" stroke="#1B2A4A" stroke-width="5"/><path d="M207 289 Q220 282 233 289" stroke="#1B2A4A" stroke-width="4.5" fill="none"/><path d="M149 284 L128 280 M291 284 L312 280" stroke="#1B2A4A" stroke-width="4.5" stroke-linecap="round"/>' if c["glasses"] == "square" else '<rect x="152" y="278" width="52" height="34" rx="12" fill="none" stroke="#7A5E10" stroke-width="3"/><rect x="236" y="278" width="52" height="34" rx="12" fill="none" stroke="#7A5E10" stroke-width="3"/><path d="M204 292 Q220 286 236 292" stroke="#7A5E10" stroke-width="3" fill="none"/><path d="M152 290 L128 284 M288 290 L312 284" stroke="#7A5E10" stroke-width="3" stroke-linecap="round"/>' if c["glasses"] == "thin" else '<circle cx="178" cy="293" r="27" fill="none" stroke="#1B2A4A" stroke-width="4.5"/><circle cx="262" cy="293" r="27" fill="none" stroke="#1B2A4A" stroke-width="4.5"/><path d="M205 290 Q220 283 235 290" stroke="#1B2A4A" stroke-width="4.5" fill="none"/>' if c["glasses"] else ''
+    if c["glasses"] == "cat_eye":
+        glasses = '<path d="M148 284 Q150 274 166 274 L196 276 Q206 278 204 292 Q200 312 178 312 Q154 312 150 296 Z" fill="none" stroke="#5A2E4A" stroke-width="4.5" stroke-linejoin="round"/><path d="M292 284 Q290 274 274 274 L244 276 Q234 278 236 292 Q240 312 262 312 Q286 312 290 296 Z" fill="none" stroke="#5A2E4A" stroke-width="4.5" stroke-linejoin="round"/><path d="M204 288 Q220 281 236 288" stroke="#5A2E4A" stroke-width="4" fill="none"/><path d="M148 282 L130 276 M292 282 L310 276" stroke="#5A2E4A" stroke-width="4" stroke-linecap="round"/><path d="M146 282 L140 272 M294 282 L300 272" stroke="#5A2E4A" stroke-width="5" stroke-linecap="round"/>'
     beard = ''
     if c.get("stubble"):
         beard = f'<path d="M132 318 C140 380 178 410 220 412 C262 410 300 380 308 318 C298 352 280 368 258 366 Q220 356 182 366 C160 368 142 352 132 318 Z" fill="{c["hair"]}" opacity="0.35"/><path d="M198 337 Q220 330 242 337 Q232 341 220 339 Q208 341 198 337 Z" fill="{c["hair"]}" opacity="0.55"/>'
@@ -611,6 +659,7 @@ def head(c, mouth, blink):
         import math
         back = f'<ellipse cx="220" cy="218" rx="136" ry="114" fill="{c["hair"]}"/>' + ''.join(f'<circle cx="{220+130*math.cos(math.radians(a)):.0f}" cy="{218-110*math.sin(math.radians(a)):.0f}" r="22" fill="{c["hair"]}"/>' for a in range(-20, 201, 20))
     ear = f'<circle cx="122" cy="324" r="10" fill="none" stroke="{c["earrings"]}" stroke-width="4"/><circle cx="318" cy="324" r="10" fill="none" stroke="{c["earrings"]}" stroke-width="4"/>' if c.get("earrings") else ''
+    if c.get("earrings_stud"): ear = f'<circle cx="122" cy="322" r="5" fill="{c["earrings_stud"]}"/><circle cx="318" cy="322" r="5" fill="{c["earrings_stud"]}"/>'
     return f'''{back}
     <circle cx="124" cy="302" r="16" fill="{c["skin_shade"]}"/><circle cx="316" cy="302" r="16" fill="{c["skin_shade"]}"/>
     <ellipse cx="220" cy="290" rx="96" ry="108" fill="{c["skin"]}"/>
