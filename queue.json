@@ -410,7 +410,7 @@
     {
       "slug": "customer-support",
       "title": "AI for Customer Support in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "customer_support",
       "file": "videos/AI-for-Customer-Support-in-2026.mp4",
       "note": "Workflow only, no legal advice. Protect customer data, always offer a human path, people own refunds and policy.",
@@ -434,7 +434,9 @@
         "Intercom Fin AI Agent",
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "youtube_id": "0UkF3RQz_X4",
+      "published": "2026-11-16"
     },
     {
       "slug": "journalists",
