@@ -500,9 +500,32 @@
     {
       "slug": "pharmacists",
       "title": "AI for Pharmacists in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Workflow and admin only. No dosing or clinical advice.",
-      "claimed_at": "2026-11-16T22:19:44Z"
+      "episode_module": "pharmacists",
+      "file": "videos/AI-for-Pharmacists-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:35 For the counter",
+        "1:19 For other languages",
+        "2:09 For tomorrow's team",
+        "3:07 For the new starter",
+        "4:07 For prescribers and suppliers",
+        "4:55 For the stockroom",
+        "5:44 For yourself",
+        "6:32 Three rules",
+        "7:21 Wrap-up"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "DeepL document translation",
+        "Microsoft Teams recap",
+        "Copilot in Outlook",
+        "Copilot in Excel",
+        "Gemini in Google Sheets"
+      ]
     },
     {
       "slug": "chefs",
