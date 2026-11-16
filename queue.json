@@ -530,7 +530,9 @@
     {
       "slug": "chefs",
       "title": "AI for Chefs and Restaurant Owners in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-16T23:20:47Z",
+      "note": "Kitchen workflow, menus, ordering, staff training and admin. No food-safety, allergen or legal guarantees: AI drafts, the chef and official food-safety rules decide; never trust AI for allergen info."
     },
     {
       "slug": "electricians",
