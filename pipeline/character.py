@@ -61,7 +61,10 @@ SUPPORT = dict(skin="#D6A27A", skin_shade="#BC875F", hair="#1A1418", outfit="#31
 JOURNALIST = dict(skin="#C68E62", skin_shade="#AA7349", hair="#2A1E18", outfit="#5E6B3F", outfit_shade="#485330",
     accent="#E63946", tee="#D5D9DE", tee_shade="#B4BAC2", wall_top="#3A4658", wall_bot="#1E2532", room="newsroom", outfit_style="field_jacket",
     hair_style="tousled", glasses=False, stubble=True, mustache=True)
-PRESENTERS = {"journalist": JOURNALIST, "support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
+ARCHITECT = dict(skin="#F1CDA8", skin_shade="#DCAE86", hair="#121216", outfit="#B5543A", outfit_shade="#93412B",
+    accent="#F2C14E", tee="#26282E", tee_shade="#17181C", wall_top="#E9E5DE", wall_bot="#C9C2B6", room="drafting_studio", outfit_style="overshirt",
+    hair_style="asym_bob", glasses="round_thick", earrings_stud="#D9DDE2")
+PRESENTERS = {"architect": ARCHITECT, "journalist": JOURNALIST, "support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -96,6 +99,35 @@ def _tooth(cx, cy, k, fill, stroke="none", sw=0):
     return f'<path d="{d}" transform="translate({cx} {cy}) scale({k})" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round"/>'
 
 def backdrop(c):
+    if c["room"] == "drafting_studio":
+        bp = "#1F4E79"; ln = "#DCE9F5"
+        plan = (f'<rect x="14" y="46" width="146" height="112" fill="{bp}"/>'
+                f'<rect x="28" y="60" width="118" height="84" fill="none" stroke="{ln}" stroke-width="3"/>'
+                f'<path d="M84 60 L84 102 M28 102 L70 102 M98 102 L146 102 M112 102 L112 144" stroke="{ln}" stroke-width="2.2" fill="none"/>'
+                f'<path d="M70 102 A14 14 0 0 1 84 88" stroke="{ln}" stroke-width="1.4" fill="none"/>'
+                f'<rect x="40" y="70" width="30" height="18" fill="none" stroke="{ln}" stroke-width="1.2" opacity="0.7"/><circle cx="128" cy="124" r="7" fill="none" stroke="{ln}" stroke-width="1.2" opacity="0.7"/>'
+                f'<rect x="106" y="146" width="48" height="8" fill="{ln}" opacity="0.85"/>'
+                f'<circle cx="22" cy="52" r="3.5" fill="#E05A47"/><circle cx="152" cy="52" r="3.5" fill="#E05A47"/>')
+        elev = (f'<rect x="330" y="40" width="94" height="72" fill="#FBF8F1" transform="rotate(3 377 76)"/>'
+                f'<g transform="rotate(3 377 76)"><path d="M344 100 L344 74 L366 58 L388 74 L388 100 Z M388 100 L388 80 L412 80 L412 100 Z" fill="none" stroke="#4A4F5A" stroke-width="2"/>'
+                f'<rect x="352" y="82" width="10" height="12" fill="none" stroke="#4A4F5A" stroke-width="1.5"/><rect x="396" y="86" width="10" height="14" fill="#9DB7CF"/>'
+                f'<path d="M338 101 L418 101" stroke="#4A4F5A" stroke-width="1.5"/><circle cx="377" cy="44" r="3.5" fill="#E05A47"/></g>')
+        model = (f'<rect x="316" y="180" width="118" height="7" fill="#7A5B3E"/>'
+                 f'<rect x="324" y="168" width="96" height="12" fill="#D9CBB2"/>'
+                 f'<rect x="334" y="128" width="34" height="40" fill="#FFFFFF" stroke="#C8C2B8" stroke-width="1.5"/><rect x="368" y="144" width="40" height="24" fill="#F1EEE8" stroke="#C8C2B8" stroke-width="1.5"/>'
+                 f'<path d="M334 128 L346 118 L380 118 L368 128 Z" fill="#E6E1D8" stroke="#C8C2B8" stroke-width="1.5"/>'
+                 f'<path d="M340 138 L362 138 M340 148 L362 148 M340 158 L362 158" stroke="#C8C2B8" stroke-width="1.5"/>'
+                 f'<circle cx="414" cy="158" r="8" fill="#7FA36B"/><rect x="413" y="162" width="2" height="6" fill="#6B4E36"/>')
+        lamp = ('<path d="M150 0 L150 22" stroke="#2C2D33" stroke-width="2"/><path d="M128 40 Q150 16 172 40 Z" fill="#2C2D33"/><ellipse cx="150" cy="41" rx="10" ry="3" fill="#FFE7A8"/>')
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/>
+        {plan}{elev}{model}
+        <rect x="18" y="190" width="40" height="70" rx="4" fill="#5C6470"/><rect x="24" y="166" width="9" height="40" rx="4" fill="#F4EFE4"/><rect x="36" y="160" width="9" height="46" rx="4" fill="#DCE9F5"/><rect x="47" y="172" width="8" height="34" rx="4" fill="#F4EFE4"/>
+        <rect x="0" y="292" width="{PW}" height="348" fill="#8A6A4C"/><rect x="0" y="286" width="{PW}" height="8" fill="#5E4630"/>
+        <path d="M66 284 L66 238 L112 284 Z M74 276 L74 258 L92 276 Z" fill="#9FD3C7" opacity="0.85" fill-rule="evenodd"/>
+        <rect x="16" y="270" width="44" height="14" rx="7" fill="#F7F1E0"/><ellipse cx="60" cy="277" rx="4" ry="7" fill="#E4DCC6"/>
+        <rect x="372" y="280" width="40" height="7" rx="3" fill="#2C2D33"/><path d="M392 280 L374 240 L404 214" stroke="#2C2D33" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M396 204 L424 222 L412 236 Z" fill="#2C2D33"/><path d="M412 236 L424 222" stroke="#FFE7A8" stroke-width="3"/>'''
     if c["room"] == "newsroom":
         clocks = ''
         for x, lab, ang in [(32, "NYC", 300), (78, "LDN", 60)]:
@@ -469,6 +501,24 @@ def backdrop(c):
     return b
 
 def body(c):
+    if c["outfit_style"] == "overshirt":
+        a = c["accent"]
+        return f"""
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 470 L268 446 C352 464 404 524 404 640 Z" fill="{c["tee"]}"/>
+    <path d="M182 448 Q220 486 258 448" stroke="{c["tee_shade"]}" stroke-width="8" fill="none"/>
+    <path d="M36 640 C36 524 88 464 172 446 L196 520 L200 640 Z" fill="{c["outfit"]}"/>
+    <path d="M404 640 C404 524 352 464 268 446 L244 520 L240 640 Z" fill="{c["outfit"]}"/>
+    <path d="M172 446 L150 448 L162 500 L196 520 Z" fill="{c["outfit_shade"]}"/><path d="M268 446 L290 448 L278 500 L244 520 Z" fill="{c["outfit_shade"]}"/>
+    <path d="M200 540 L200 640 M240 540 L240 640" stroke="{c["outfit_shade"]}" stroke-width="3"/>
+    <circle cx="190" cy="562" r="3.5" fill="#E9E2D6"/><circle cx="191" cy="602" r="3.5" fill="#E9E2D6"/>
+    <rect x="104" y="530" width="56" height="56" rx="5" fill="{c["outfit_shade"]}" opacity="0.5"/><path d="M102 528 L162 528 L158 544 L106 544 Z" fill="{c["outfit_shade"]}"/>
+    <rect x="280" y="530" width="56" height="56" rx="5" fill="{c["outfit_shade"]}" opacity="0.5"/><path d="M278 528 L338 528 L334 544 L282 544 Z" fill="{c["outfit_shade"]}"/>
+    <rect x="292" y="500" width="7" height="36" rx="1.5" fill="{a}" transform="rotate(6 295 518)"/><path d="M292 500 L295.5 490 L299 500 Z" fill="#E8C9A0" transform="rotate(6 295 518)"/><rect x="292" y="532" width="7" height="5" fill="#E07A7A" transform="rotate(6 295 518)"/>
+    <path d="M310 498 L322 498 L322 536 L310 536 Z" fill="#F4F4F2" stroke="#9AA0A8" stroke-width="1.5" transform="rotate(-4 316 517)"/>
+    <path d="M312 506 L316 506 M312 512 L318 512 M312 518 L316 518 M312 524 L318 524" stroke="#5A606A" stroke-width="1.2" transform="rotate(-4 316 517)"/>
+    <path d="M70 640 C74 590 86 560 104 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M370 640 C366 590 354 560 336 540" stroke="{c["outfit_shade"]}" stroke-width="5" fill="none" stroke-linecap="round"/>"""
     if c["outfit_style"] == "field_jacket":
         a = c["accent"]
         return f"""
@@ -764,7 +814,12 @@ def head(c, mouth, blink):
         eyes = '<path d="M163 294 Q178 305 193 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M247 294 Q262 305 277 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/>'
     else:
         eyes = ''.join(f'<ellipse cx="{x}" cy="292" rx="15" ry="17" fill="#FFFFFF"/><circle cx="{x+1}" cy="294" r="9.5" fill="#2E1F18"/><circle cx="{x+4}" cy="290" r="3.2" fill="#FFFFFF"/>' for x in (178, 262))
-    if c["hair_style"] == "tousled":
+    if c["hair_style"] == "asym_bob":
+        hair = (f'<path d="M116 340 C94 196 168 142 222 144 C292 140 354 194 334 380 L306 386 C316 304 308 246 292 222 L152 214 C138 242 132 292 140 340 Z" fill="{c["hair"]}"/>'
+                f'<path d="M146 228 C148 172 196 140 250 146 C298 152 324 190 316 252 C304 222 282 206 250 204 C214 206 182 216 146 228 Z" fill="{c["hair"]}"/>'
+                f'<path d="M168 168 C194 150 236 144 270 154 M262 166 C290 176 306 200 312 230" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.16" stroke-linecap="round"/>'
+                f'<path d="M322 280 C326 310 324 340 318 370" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.12" stroke-linecap="round"/>')
+    elif c["hair_style"] == "tousled":
         hair = (f'<path d="M122 282 C106 172 182 146 222 150 C298 144 338 204 318 284 C312 244 300 216 272 204 C232 216 180 216 150 208 C134 228 126 254 122 282 Z" fill="{c["hair"]}"/>'
                 f'<path d="M136 216 C120 166 160 128 206 126 L196 112 L226 124 C240 112 262 110 280 118 L272 128 C306 138 324 170 312 214 C300 202 290 198 280 206 C274 190 260 184 248 198 C240 182 224 180 214 196 C204 182 188 184 180 200 C170 188 152 192 136 216 Z" fill="{c["hair"]}"/>'
                 f'<path d="M208 194 C200 212 204 228 216 236 C212 222 214 208 222 198 Z" fill="{c["hair"]}"/>'
@@ -840,6 +895,8 @@ def head(c, mouth, blink):
     else:
         hair = f'<circle cx="220" cy="146" r="38" fill="{c["hair"]}"/><path d="M119 286 C104 176 188 150 228 160 C300 148 344 210 321 292 C312 250 292 226 262 216 C230 242 172 246 140 236 C128 250 122 268 119 286 Z" fill="{c["hair"]}"/>'
     glasses = '<rect x="149" y="272" width="58" height="42" rx="10" fill="none" stroke="#1B2A4A" stroke-width="5"/><rect x="233" y="272" width="58" height="42" rx="10" fill="none" stroke="#1B2A4A" stroke-width="5"/><path d="M207 289 Q220 282 233 289" stroke="#1B2A4A" stroke-width="4.5" fill="none"/><path d="M149 284 L128 280 M291 284 L312 280" stroke="#1B2A4A" stroke-width="4.5" stroke-linecap="round"/>' if c["glasses"] == "square" else '<rect x="152" y="278" width="52" height="34" rx="12" fill="none" stroke="#7A5E10" stroke-width="3"/><rect x="236" y="278" width="52" height="34" rx="12" fill="none" stroke="#7A5E10" stroke-width="3"/><path d="M204 292 Q220 286 236 292" stroke="#7A5E10" stroke-width="3" fill="none"/><path d="M152 290 L128 284 M288 290 L312 284" stroke="#7A5E10" stroke-width="3" stroke-linecap="round"/>' if c["glasses"] == "thin" else '<circle cx="178" cy="293" r="27" fill="none" stroke="#1B2A4A" stroke-width="4.5"/><circle cx="262" cy="293" r="27" fill="none" stroke="#1B2A4A" stroke-width="4.5"/><path d="M205 290 Q220 283 235 290" stroke="#1B2A4A" stroke-width="4.5" fill="none"/>' if c["glasses"] else ''
+    if c["glasses"] == "round_thick":
+        glasses = '<circle cx="178" cy="292" r="27" fill="none" stroke="#141418" stroke-width="6"/><circle cx="262" cy="292" r="27" fill="none" stroke="#141418" stroke-width="6"/><path d="M205 288 Q220 280 235 288" stroke="#141418" stroke-width="5" fill="none"/><path d="M151 286 L128 280 M289 286 L312 280" stroke="#141418" stroke-width="5" stroke-linecap="round"/>'
     if c["glasses"] == "cat_eye":
         glasses = '<path d="M148 284 Q150 274 166 274 L196 276 Q206 278 204 292 Q200 312 178 312 Q154 312 150 296 Z" fill="none" stroke="#5A2E4A" stroke-width="4.5" stroke-linejoin="round"/><path d="M292 284 Q290 274 274 274 L244 276 Q234 278 236 292 Q240 312 262 312 Q286 312 290 296 Z" fill="none" stroke="#5A2E4A" stroke-width="4.5" stroke-linejoin="round"/><path d="M204 288 Q220 281 236 288" stroke="#5A2E4A" stroke-width="4" fill="none"/><path d="M148 282 L130 276 M292 282 L310 276" stroke="#5A2E4A" stroke-width="4" stroke-linecap="round"/><path d="M146 282 L140 272 M294 282 L300 272" stroke="#5A2E4A" stroke-width="5" stroke-linecap="round"/>'
     if c.get("headset"):

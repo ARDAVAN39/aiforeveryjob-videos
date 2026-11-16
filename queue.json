@@ -468,9 +468,32 @@
     {
       "slug": "architects",
       "title": "AI for Architects in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-16T21:20:15Z",
-      "note": "Design workflow, admin, client communication and learning. No structural, code-compliance or legal advice; licensed professionals own the design."
+      "status": "rendered",
+      "note": "Design workflow, admin, client communication and learning. No structural, code-compliance or legal advice; licensed professionals own the design.",
+      "episode_module": "architects",
+      "file": "videos/AI-for-Architects-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:32 Untangle the brief",
+        "1:14 Site and planning rules",
+        "1:58 Test the massing",
+        "2:50 Concept images",
+        "3:45 Drawings and specs",
+        "4:33 Meetings and site visits",
+        "5:19 Explain it, keep learning",
+        "5:59 Three rules",
+        "6:43 Wrap-up"
+      ],
+      "tools": [
+        "Autodesk Forma (massing, sun and daylight, rapid wind and noise predictions)",
+        "Autodesk Assistant in Revit (preview)",
+        "Chaos Veras",
+        "Midjourney",
+        "Adobe Photoshop Generative Fill",
+        "Microsoft Copilot in Teams",
+        "Claude projects",
+        "ChatGPT projects"
+      ]
     },
     {
       "slug": "pharmacists",
