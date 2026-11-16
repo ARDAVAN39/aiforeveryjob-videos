@@ -348,9 +348,28 @@
     {
       "slug": "real-estate-agents",
       "title": "AI for Real Estate Agents in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-16T15:20:29Z",
-      "note": "Workflow, marketing and client communication only. No financial, legal or valuation advice; fair-housing compliance and checking listing facts."
+      "status": "rendered",
+      "note": "Workflow, marketing and client communication only. No financial, legal or valuation advice; fair-housing compliance and checking listing facts.",
+      "episode_module": "real_estate_agents",
+      "file": "videos/AI-for-Real-Estate-Agents-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:31 The first walkthrough",
+        "1:12 Write the listing",
+        "2:03 Photos and staging",
+        "2:55 Spread the word",
+        "3:38 Leads and questions",
+        "4:33 Showings and feedback",
+        "5:13 Deadlines to the keys",
+        "5:51 Three rules",
+        "6:31 Wrap-up"
+      ],
+      "tools": [
+        "Canva Magic Write",
+        "Canva Magic Resize",
+        "ChatGPT",
+        "Claude"
+      ]
     },
     {
       "slug": "researchers",

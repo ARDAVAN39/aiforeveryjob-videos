@@ -29,3 +29,4 @@
 - 2026-11-16: AI for Accountants in 2026 published (upload limit lifted), https://youtu.be/QMFLaMKGsn8
 - 2026-11-16: AI for Designers in 2026 published (15:20 UTC), https://youtu.be/XonH8-g5Xf0
 - 2026-11-16: AI for Salespeople in 2026 published (15:40 UTC), https://youtu.be/jorQjadBVYw
+- 2026-11-16: AI for Real Estate Agents in 2026 rendered (6:52, presenter: woman with long auburn curls in a plum blazer with a gold key pendant and name badge, new 'open_house' room/'open_blazer' outfit/'long_curly' hair, voice af_bella; one-listing walkthrough-to-keys structure); fact-check made 2 small edits (Magic Write 'rewrite' not 'shorten', softened 'AI adds' to 'AI can add'); left status rendered (one publish per run; Designers was published this run). Backlog: Salespeople, HR, Real Estate Agents.
