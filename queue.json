@@ -378,7 +378,7 @@
     {
       "slug": "researchers",
       "title": "AI for Researchers in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "researchers",
       "file": "videos/AI-for-Researchers-in-2026.mp4",
       "chapters": [
@@ -403,7 +403,9 @@
         "Jupyter AI",
         "Overleaf AI features",
         "Zotero retracted-item alerts"
-      ]
+      ],
+      "youtube_id": "OsRTwAtlU6A",
+      "published": "2026-11-16"
     },
     {
       "slug": "customer-support",
