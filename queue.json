@@ -228,7 +228,7 @@
     {
       "slug": "accountants",
       "title": "AI for Accountants in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "No tax or investment advice.",
       "episode_module": "accountants",
       "file": "videos/AI-for-Accountants-in-2026.mp4",
@@ -252,7 +252,9 @@
         "Microsoft Copilot in Excel",
         "JAX in Xero",
         "Thomson Reuters CoCounsel Tax"
-      ]
+      ],
+      "youtube_id": "QMFLaMKGsn8",
+      "published": "2026-11-16"
     },
     {
       "slug": "designers",
