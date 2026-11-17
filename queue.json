@@ -569,7 +569,7 @@
     {
       "slug": "electricians",
       "title": "AI for Electricians and Tradespeople in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Job admin, quotes, customer communication, scheduling, documentation and learning only. No electrical safety, wiring or code-compliance advice: licensed tradespeople and the local code decide; AI never replaces the code book, testing or inspection.",
       "episode_module": "electricians",
       "file": "videos/AI-for-Electricians-and-Tradespeople-in-2026.mp4",
@@ -594,7 +594,9 @@
         "ChatGPT",
         "Claude",
         "Google Lens"
-      ]
+      ],
+      "youtube_id": "iLg26O_usIk",
+      "published": "2026-11-17"
     },
     {
       "slug": "freelancers",
