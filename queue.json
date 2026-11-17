@@ -867,8 +867,9 @@
     {
       "slug": "fitness-trainers",
       "title": "AI for Fitness Trainers in 2026",
-      "status": "todo",
-      "note": "Business admin, client communication, scheduling and content. No medical, injury or nutrition advice; qualified professionals decide."
+      "status": "in_progress",
+      "note": "Business admin, client communication, scheduling and content. No medical, injury or nutrition advice; qualified professionals decide.",
+      "claimed_at": "2026-11-17T18:20:21Z"
     },
     {
       "slug": "logistics",
