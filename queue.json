@@ -833,8 +833,9 @@
     {
       "slug": "farmers",
       "title": "AI for Farmers in 2026",
-      "status": "todo",
-      "note": "Farm admin, records, planning, learning and marketing. No agronomic, pesticide, veterinary or financial advice; local experts and labels decide."
+      "status": "in_progress",
+      "note": "Farm admin, records, planning, learning and marketing. No agronomic, pesticide, veterinary or financial advice; local experts and labels decide.",
+      "claimed_at": "2026-11-17T17:20:57Z"
     },
     {
       "slug": "fitness-trainers",
