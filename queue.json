@@ -758,9 +758,39 @@
     {
       "slug": "photographers",
       "title": "AI for Photographers in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Editing workflow, culling, client communication and admin. Be honest about generative edits and disclosure; no legal or copyright advice.",
-      "claimed_at": "2026-11-17T14:21:55Z"
+      "claimed_at": "2026-11-17T14:21:55Z",
+      "episode_module": "photographers",
+      "file": "videos/AI-for-Photographers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:33 Frame 1: enquiry and brief",
+        "1:16 Frame 2: the cull",
+        "2:02 Frame 3: the base edit",
+        "2:50 Frame 4: retouch honestly",
+        "3:41 Frame 5: words for images",
+        "4:26 Frame 6: gallery, delivery",
+        "5:10 Frame 7: the back office",
+        "5:54 Three rules",
+        "6:45 Wrap-up"
+      ],
+      "tools": [
+        "Lightroom Classic Assisted Culling",
+        "Lightroom Denoise",
+        "Lightroom Generative Remove (Adobe Firefly)",
+        "Lightroom Open Eyes (Early Access)",
+        "Photoshop Generative Fill",
+        "Content Credentials in Lightroom",
+        "Aftershoot (culling, style editing)",
+        "Imagen (culling, Personal AI Profile)",
+        "Pixieset Photo Editor",
+        "Excire Foto",
+        "Pic-Time AI-Powered Gallery Search",
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ]
     },
     {
       "slug": "veterinarians",
