@@ -719,9 +719,32 @@
     {
       "slug": "social-workers",
       "title": "AI for Social Workers in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Documentation, admin, resources and learning only. No clinical, legal or benefits advice; protect client confidentiality; humans make every decision about people.",
-      "claimed_at": "2026-11-17T11:20:30Z"
+      "claimed_at": "2026-11-17T11:20:30Z",
+      "episode_module": "social_workers",
+      "file": "videos/AI-for-Social-Workers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:36 Before: the letter home",
+        "1:27 Before: in their language",
+        "2:18 After: notes into drafts",
+        "3:16 After: check the words",
+        "4:03 Desk: the resource list",
+        "5:03 Desk: inbox and reports",
+        "5:49 You: supervision, learning",
+        "6:34 Three rules",
+        "7:25 Wrap-up"
+      ],
+      "tools": [
+        "Microsoft 365 Copilot (Copilot in Word and Outlook)",
+        "DeepL document translation",
+        "Beam Notes (formerly Magic Notes), if your agency provides it",
+        "Gemini Notebook (formerly NotebookLM)",
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ]
     },
     {
       "slug": "translators",
