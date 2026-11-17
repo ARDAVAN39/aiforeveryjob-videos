@@ -932,8 +932,9 @@
     {
       "slug": "job-interview",
       "title": "AI for Your Job Interview in 2026",
-      "status": "todo",
-      "note": "Cross-cutting: preparing, practising and following up honestly. Never use AI to deceive or answer live during an interview; check employer rules."
+      "status": "in_progress",
+      "note": "Cross-cutting: preparing, practising and following up honestly. Never use AI to deceive or answer live during an interview; check employer rules.",
+      "claimed_at": "2026-11-17T20:23:00Z"
     }
   ]
 }
