@@ -472,7 +472,7 @@
     {
       "slug": "architects",
       "title": "AI for Architects in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Design workflow, admin, client communication and learning. No structural, code-compliance or legal advice; licensed professionals own the design.",
       "episode_module": "architects",
       "file": "videos/AI-for-Architects-in-2026.mp4",
@@ -497,7 +497,9 @@
         "Microsoft Copilot in Teams",
         "Claude projects",
         "ChatGPT projects"
-      ]
+      ],
+      "youtube_id": "qZQWz-pXrJ8",
+      "published": "2026-11-17"
     },
     {
       "slug": "pharmacists",
