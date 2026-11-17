@@ -719,8 +719,9 @@
     {
       "slug": "social-workers",
       "title": "AI for Social Workers in 2026",
-      "status": "todo",
-      "note": "Documentation, admin, resources and learning only. No clinical, legal or benefits advice; protect client confidentiality; humans make every decision about people."
+      "status": "in_progress",
+      "note": "Documentation, admin, resources and learning only. No clinical, legal or benefits advice; protect client confidentiality; humans make every decision about people.",
+      "claimed_at": "2026-11-17T11:20:30Z"
     },
     {
       "slug": "translators",
