@@ -441,7 +441,7 @@
     {
       "slug": "journalists",
       "title": "AI for Journalists in 2026",
-      "status": "rendered",
+      "status": "published",
       "episode_module": "journalists",
       "file": "videos/AI-for-Journalists-in-2026.mp4",
       "chapters": [
@@ -465,7 +465,9 @@
         "InVID-WeVerify plugin",
         "DeepL"
       ],
-      "note": "Workflow only; protect sources, verify everything, no legal advice."
+      "note": "Workflow only; protect sources, verify everything, no legal advice.",
+      "youtube_id": "1pCSITBb9rY",
+      "published": "2026-11-17"
     },
     {
       "slug": "architects",
