@@ -539,9 +539,32 @@
     {
       "slug": "electricians",
       "title": "AI for Electricians and Tradespeople in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-17T01:20:08Z",
-      "note": "Job admin, quotes, customer communication, scheduling, documentation and learning only. No electrical safety, wiring or code-compliance advice: licensed tradespeople and the local code decide; AI never replaces the code book, testing or inspection."
+      "status": "rendered",
+      "note": "Job admin, quotes, customer communication, scheduling, documentation and learning only. No electrical safety, wiring or code-compliance advice: licensed tradespeople and the local code decide; AI never replaces the code book, testing or inspection.",
+      "episode_module": "electricians",
+      "file": "videos/AI-for-Electricians-and-Tradespeople-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:32 Missed calls on a ladder",
+        "1:10 Quotes at ten at night",
+        "1:59 Explaining the job",
+        "2:41 Notes, photos, paperwork",
+        "3:31 Planning the day and van",
+        "4:12 Chasing invoices",
+        "4:55 Learning new kit",
+        "5:51 Three rules",
+        "6:35 Wrap-up"
+      ],
+      "tools": [
+        "Jobber Receptionist",
+        "Jobber AI (Voice, Rewrite, custom reports)",
+        "Housecall Pro CSR AI and Analyst AI",
+        "Tradify SmartWrite",
+        "ServiceTitan Atlas (Field Pro)",
+        "ChatGPT",
+        "Claude",
+        "Google Lens"
+      ]
     },
     {
       "slug": "freelancers",
