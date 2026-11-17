@@ -869,9 +869,35 @@
     {
       "slug": "fitness-trainers",
       "title": "AI for Fitness Trainers in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Business admin, client communication, scheduling and content. No medical, injury or nutrition advice; qualified professionals decide.",
-      "claimed_at": "2026-11-17T18:20:21Z"
+      "claimed_at": "2026-11-17T18:20:21Z",
+      "episode_module": "fitness_trainers",
+      "file": "videos/AI-for-Fitness-Trainers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:35 Set 1: The first enquiry",
+        "1:17 Set 2: Book the consult",
+        "1:59 Set 3: The intake forms",
+        "2:42 Set 4: Welcome aboard",
+        "3:23 Set 5: The weekly check-in",
+        "4:05 Set 6: Content that's true",
+        "4:45 Set 7: Coach the coach",
+        "5:27 Three rules",
+        "6:11 Wrap-up"
+      ],
+      "tools": [
+        "Mindbody Messenger[ai]",
+        "Google Calendar appointment schedules",
+        "Gemini Help me write in Gmail",
+        "Gemini in Google Forms",
+        "Descript",
+        "Canva Magic Write",
+        "Gemini Guided Learning",
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ]
     },
     {
       "slug": "logistics",
