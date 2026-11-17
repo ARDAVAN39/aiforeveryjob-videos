@@ -749,8 +749,9 @@
     {
       "slug": "translators",
       "title": "AI for Translators and Interpreters in 2026",
-      "status": "todo",
-      "note": "Workflow, terminology, quality checks and business admin. Be honest about machine translation limits and confidentiality; no legal advice."
+      "status": "in_progress",
+      "note": "Workflow, terminology, quality checks and business admin. Be honest about machine translation limits and confidentiality; no legal advice.",
+      "claimed_at": "2026-11-17T12:21:29Z"
     },
     {
       "slug": "photographers",
