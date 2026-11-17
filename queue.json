@@ -689,7 +689,8 @@
     {
       "slug": "project-managers",
       "title": "AI for Project Managers in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-17T10:20:01Z"
     },
     {
       "slug": "social-workers",
