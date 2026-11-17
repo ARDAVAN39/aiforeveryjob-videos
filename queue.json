@@ -904,9 +904,30 @@
     {
       "slug": "logistics",
       "title": "AI for Logistics and Delivery Drivers in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Routing, paperwork, communication and learning. Never use phones or AI while driving; follow company and road rules; no legal advice.",
-      "claimed_at": "2026-11-17T19:20:45Z"
+      "claimed_at": "2026-11-17T19:20:45Z",
+      "episode_module": "logistics",
+      "file": "videos/AI-for-Logistics-and-Delivery-Drivers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:31 The order lands",
+        "1:15 On the dock",
+        "1:58 Papers that travel",
+        "2:41 Behind the wheel",
+        "3:25 Nobody home",
+        "4:11 A crushed corner",
+        "4:55 The way back",
+        "5:40 New scanner, new skills",
+        "6:21 Three rules",
+        "7:06 Wrap-up"
+      ],
+      "tools": [
+        "Onfleet (AI route optimization, AI-powered ETAs, branded SMS, proof of delivery)",
+        "Google Translate conversation mode and camera",
+        "Claude (PDF uploads)",
+        "Gemini in Google Sheets"
+      ]
     },
     {
       "slug": "job-interview",
