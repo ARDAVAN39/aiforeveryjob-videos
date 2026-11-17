@@ -537,7 +537,9 @@
     {
       "slug": "electricians",
       "title": "AI for Electricians and Tradespeople in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-17T01:20:08Z",
+      "note": "Job admin, quotes, customer communication, scheduling, documentation and learning only. No electrical safety, wiring or code-compliance advice: licensed tradespeople and the local code decide; AI never replaces the code book, testing or inspection."
     },
     {
       "slug": "freelancers",
