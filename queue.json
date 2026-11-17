@@ -569,9 +569,33 @@
     {
       "slug": "freelancers",
       "title": "AI for Freelancers in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-17T02:19:55Z",
-      "note": "Finding work, proposals, client communication, project admin and learning. No tax, legal, contract or pricing advice; the freelancer decides rates and signs contracts."
+      "status": "rendered",
+      "note": "Finding work, proposals, client communication, project admin and learning. No tax, legal, contract or pricing advice; the freelancer decides rates and signs contracts.",
+      "episode_module": "freelancers",
+      "file": "videos/AI-for-Freelancers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:34 Hat one: the scout",
+        "1:19 Hat two: the pitch writer",
+        "2:16 Hat three: the front desk",
+        "3:01 Hat four: the project lead",
+        "3:58 Hat five: the back office",
+        "4:43 Hat six: the editor",
+        "5:27 Hat seven: the student",
+        "6:12 Three rules",
+        "6:59 Wrap-up"
+      ],
+      "tools": [
+        "Upwork Uma",
+        "Fiverr Go Personal Assistant",
+        "Gemini in Gmail",
+        "Grammarly tone suggestions",
+        "Otter",
+        "Notion AI Meeting Notes",
+        "ChatGPT study mode",
+        "ChatGPT",
+        "Claude"
+      ]
     },
     {
       "slug": "job-seekers",
