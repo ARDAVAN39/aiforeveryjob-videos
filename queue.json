@@ -902,8 +902,9 @@
     {
       "slug": "logistics",
       "title": "AI for Logistics and Delivery Drivers in 2026",
-      "status": "todo",
-      "note": "Routing, paperwork, communication and learning. Never use phones or AI while driving; follow company and road rules; no legal advice."
+      "status": "in_progress",
+      "note": "Routing, paperwork, communication and learning. Never use phones or AI while driving; follow company and road rules; no legal advice.",
+      "claimed_at": "2026-11-17T19:20:45Z"
     },
     {
       "slug": "job-interview",
