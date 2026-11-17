@@ -628,8 +628,34 @@
     {
       "slug": "job-seekers",
       "title": "AI for Job Seekers in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-17T09:11:43Z"
+      "status": "rendered",
+      "claimed_at": "2026-11-17T09:11:43Z",
+      "episode_module": "job_seekers",
+      "file": "videos/AI-for-Job-Seekers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:33 Days 1-3: Your target",
+        "1:14 Days 4-7: The master CV",
+        "2:10 Week 2: Find the roles",
+        "3:02 Week 2: Tailor each one",
+        "3:50 Week 3: Know your stories",
+        "4:31 Week 3: Say it out loud",
+        "5:28 Week 4: Follow up, reset",
+        "6:07 Three rules",
+        "6:49 Wrap-up"
+      ],
+      "tools": [
+        "Google Career Dreamer (US only)",
+        "Grammarly Resume Builder",
+        "Grammarly Resume Feedback Tool",
+        "LinkedIn AI-powered job search and job match",
+        "Indeed Career Scout",
+        "ChatGPT",
+        "Claude",
+        "Gemini Live",
+        "Yoodli"
+      ],
+      "note": "Applications, interview practice and organisation. No legal, visa or salary advice; never invent experience; follow employer AI rules; scam awareness."
     },
     {
       "slug": "data-analysts",
