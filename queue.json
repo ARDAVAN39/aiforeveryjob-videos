@@ -835,9 +835,34 @@
     {
       "slug": "farmers",
       "title": "AI for Farmers in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Farm admin, records, planning, learning and marketing. No agronomic, pesticide, veterinary or financial advice; local experts and labels decide.",
-      "claimed_at": "2026-11-17T17:20:57Z"
+      "claimed_at": "2026-11-17T17:20:57Z",
+      "episode_module": "farmers",
+      "file": "videos/AI-for-Farmers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:38 Winter: plan the year",
+        "1:24 Winter: the paper pile",
+        "2:12 Spring: records that last",
+        "3:00 Spring: the new crew",
+        "3:46 Summer: notes by voice",
+        "4:43 Harvest: the farm stand",
+        "5:26 Off season: keep learning",
+        "6:12 Three rules",
+        "7:00 Wrap-up"
+      ],
+      "tools": [
+        "ChatGPT",
+        "ChatGPT Voice",
+        "Claude",
+        "Gemini",
+        "Gemini in Google Sheets",
+        "Gemini Guided Learning",
+        "Google Translate conversation mode and camera",
+        "Canva Magic Write",
+        "Canva Magic Design"
+      ]
     },
     {
       "slug": "fitness-trainers",
