@@ -504,7 +504,7 @@
     {
       "slug": "pharmacists",
       "title": "AI for Pharmacists in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Workflow and admin only. No dosing or clinical advice.",
       "episode_module": "pharmacists",
       "file": "videos/AI-for-Pharmacists-in-2026.mp4",
@@ -529,7 +529,9 @@
         "Copilot in Outlook",
         "Copilot in Excel",
         "Gemini in Google Sheets"
-      ]
+      ],
+      "youtube_id": "hS2hWZRBRGw",
+      "published": "2026-11-17"
     },
     {
       "slug": "chefs",
