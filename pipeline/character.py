@@ -82,7 +82,10 @@ JOB_SEEKER = dict(skin="#C99A78", skin_shade="#AE7F5E", hair="#2A1E1A", outfit="
 ANALYST = dict(skin="#B57E57", skin_shade="#9A6542", hair="#16120F", outfit="#5E8C6A", outfit_shade="#4A7356",
     accent="#F2A541", shirt="#EEF2F6", shirt_shade="#C9D3DC", wall_top="#1F3B45", wall_bot="#0F2128", room="data_desk", outfit_style="quarter_zip",
     hair_style="swoop", glasses="tortoise", stubble=True)
-PRESENTERS = {"analyst": ANALYST, "job_seeker": JOB_SEEKER, "chef": CHEF, "freelancer": FREELANCER, "electrician": ELECTRICIAN, "pharmacist": PHARMACIST, "architect": ARCHITECT, "journalist": JOURNALIST, "support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
+PROJECT_MANAGER = dict(skin="#6E4430", skin_shade="#58331F", hair="#1A1210", outfit="#1F7A74", outfit_shade="#17605B",
+    accent="#F2B84B", wall_top="#3B2E4A", wall_bot="#1F1828", room="pm_office", outfit_style="wrap_top",
+    hair_style="locs_bun", glasses=False, earrings="#F2B84B")
+PRESENTERS = {"project_manager": PROJECT_MANAGER, "analyst": ANALYST, "job_seeker": JOB_SEEKER, "chef": CHEF, "freelancer": FREELANCER, "electrician": ELECTRICIAN, "pharmacist": PHARMACIST, "architect": ARCHITECT, "journalist": JOURNALIST, "support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -117,6 +120,48 @@ def _tooth(cx, cy, k, fill, stroke="none", sw=0):
     return f'<path d="{d}" transform="translate({cx} {cy}) scale({k})" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round"/>'
 
 def backdrop(c):
+    if c["room"] == "pm_office":
+        a = c["accent"]
+        cols = [("TO DO", 22), ("DOING", 72), ("DONE", 122)]
+        kb = ('<rect x="10" y="26" width="176" height="200" rx="6" fill="#F4F1EA"/><rect x="10" y="26" width="176" height="200" rx="6" fill="none" stroke="#8C8496" stroke-width="3"/>'
+              '<path d="M68 40 L68 216 M126 40 L126 216" stroke="#C9C2B6" stroke-width="2"/>')
+        for t, x in cols:
+            kb += f'<text x="{x+22}" y="46" font-family="Inter" font-weight="800" font-size="9" fill="#3B2E4A" text-anchor="middle" letter-spacing="1">{t}</text>'
+        cards = [(18, 56, "#F6D365"), (18, 92, "#9FE2BF"), (18, 128, "#F7A8B8"), (18, 164, "#F6D365"),
+                 (76, 56, "#9FC9F2"), (76, 92, "#F6D365"), (134, 56, "#9FE2BF"), (134, 92, "#9FE2BF"), (134, 128, "#9FC9F2")]
+        for i, (x, y, col) in enumerate(cards):
+            r = (-3, 2, -1, 3, 1, -2, 2, -3, 1)[i]
+            kb += (f'<g transform="rotate({r} {x+22} {y+14})"><rect x="{x}" y="{y}" width="44" height="28" rx="2" fill="{col}"/>'
+                   f'<rect x="{x+5}" y="{y+7}" width="30" height="3" rx="1.5" fill="#4A3E2A" opacity="0.6"/><rect x="{x+5}" y="{y+14}" width="22" height="3" rx="1.5" fill="#4A3E2A" opacity="0.6"/>'
+                   + (f'<path d="M{x+30} {y+20} L{x+34} {y+24} L{x+40} {y+16}" stroke="#2F7A4A" stroke-width="2.5" fill="none" stroke-linecap="round"/>' if x == 134 else '') + '</g>')
+        kb += f'<circle cx="88" cy="140" r="7" fill="{a}"/><circle cx="88" cy="140" r="2.5" fill="#3B2E4A"/>'
+        gantt = ('<rect x="284" y="30" width="146" height="112" rx="5" fill="#14101C"/><rect x="290" y="36" width="134" height="100" rx="3" fill="#251E33"/>'
+                 '<rect x="298" y="44" width="50" height="5" rx="2.5" fill="#C9C2D6"/>'
+                 + ''.join(f'<path d="M{x} 56 L{x} 130" stroke="#3A3148" stroke-width="1"/>' for x in range(300, 424, 18)))
+        for i, (x, w, col) in enumerate([(300, 40, "#4FB3BF"), (330, 34, "#4FB3BF"), (352, 30, "#9FE2BF"), (370, 26, "#F7A8B8"), (388, 30, a)]):
+            y = 62 + i * 13
+            gantt += f'<rect x="{x}" y="{y}" width="{w}" height="8" rx="3" fill="{col}"/>'
+        gantt += f'<path d="M340 66 L340 74 L352 75" stroke="#C9C2D6" stroke-width="1.5" fill="none"/><path d="M412 122 L418 128 L412 134 L406 128 Z" fill="{a}"/><path d="M404 56 L404 136" stroke="#E5684C" stroke-width="1.5" stroke-dasharray="3 3"/>'
+        gantt += '<rect x="352" y="142" width="12" height="14" fill="#14101C"/><rect x="336" y="154" width="44" height="6" rx="3" fill="#14101C"/>'
+        cal = ('<rect x="314" y="172" width="96" height="92" rx="4" fill="#F4F1EA"/><rect x="314" y="172" width="96" height="20" rx="4" fill="#E5684C"/>'
+               '<text x="362" y="186" font-family="Inter" font-weight="800" font-size="10" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">LAUNCH</text>')
+        for r in range(4):
+            for k in range(6):
+                x, y = 320 + k * 15, 198 + r * 16
+                cal += f'<rect x="{x}" y="{y}" width="11" height="11" rx="2" fill="{"#E5684C" if (r, k) == (2, 4) else "#DCD5C8"}"/>'
+        cal += '<path d="M380 230 L392 244 M392 230 L380 244" stroke="#FFFFFF" stroke-width="0"/><path d="M386 228 L386 212 L398 216 L386 220" stroke="#3B2E4A" stroke-width="2" fill="#F2B84B"/>'
+        lamp = '<path d="M232 0 L232 24" stroke="#14101C" stroke-width="3"/><path d="M212 44 Q214 24 232 24 Q250 24 252 44 Z" fill="#7A5C8E"/><ellipse cx="232" cy="44" rx="20" ry="4" fill="#FFE3A3"/>'
+        desk = (f'<rect x="0" y="292" width="{PW}" height="348" fill="#B89C74"/><rect x="0" y="286" width="{PW}" height="8" fill="#D2B98E"/><rect x="0" y="294" width="{PW}" height="4" fill="#8E7454"/>'
+                '<path d="M330 286 L340 246 L420 246 L412 286 Z" fill="#B8C0C8"/><path d="M335 282 L344 250 L415 250 L407 282 Z" fill="#251E33"/>'
+                '<rect x="348" y="258" width="22" height="4" rx="2" fill="#4FB3BF"/><rect x="356" y="266" width="28" height="4" rx="2" fill="#9FE2BF"/><rect x="368" y="274" width="30" height="4" rx="2" fill="#F2B84B"/>'
+                '<rect x="322" y="284" width="100" height="6" rx="3" fill="#D3D9DE"/>'
+                f'<rect x="36" y="252" width="28" height="34" rx="5" fill="#F4F1EA"/><path d="M64 260 Q78 262 76 272 Q74 280 64 278" stroke="#F4F1EA" stroke-width="5" fill="none"/><rect x="36" y="262" width="28" height="8" fill="{c["outfit"]}"/>'
+                '<path d="M50 242 Q44 234 50 226" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>'
+                '<rect x="86" y="270" width="54" height="16" rx="3" fill="#F4F1EA" transform="rotate(-4 113 278)"/><rect x="90" y="266" width="54" height="14" rx="3" fill="#E9A23B" transform="rotate(3 117 273)"/>')
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient>
+        <radialGradient id="g" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFE3A3" stop-opacity="0.26"/><stop offset="1" stop-color="#FFE3A3" stop-opacity="0"/></radialGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/><circle cx="232" cy="74" r="140" fill="url(#g)"/>
+        {kb}{gantt}{cal}{lamp}{desk}'''
     if c["room"] == "library_nook":
         books = ''
         cols = ["#C8553D", "#F2B84B", "#3D7DD8", "#E9E2D0", "#8AB17D", "#7A3E5C", "#2B2F3A", "#E07A5F", "#5FA3A3"]
@@ -710,6 +755,25 @@ def backdrop(c):
     return b
 
 def body(c):
+    if c["outfit_style"] == "wrap_top":
+        a = c["accent"]; o = c["outfit"]; sh = c["outfit_shade"]
+        return f"""
+    <defs><clipPath id="wt"><path d="M36 640 C36 524 88 464 172 446 L220 470 L268 446 C352 464 404 524 404 640 Z"/></clipPath></defs>
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 470 L268 446 C352 464 404 524 404 640 Z" fill="{o}"/>
+    <path d="M170 446 Q200 446 220 470 Q240 446 270 446 L262 460 L222 540 L178 460 Z" fill="{c["skin_shade"]}"/>
+    <g clip-path="url(#wt)">
+    <path d="M164 444 L232 546 L360 640 L404 640 L404 600 L280 520 L272 446 Z" fill="{sh}" opacity="0.55"/>
+    <path d="M168 446 L224 540 L340 640" stroke="{sh}" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M272 446 L234 520" stroke="{sh}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <path d="M194 452 Q220 492 246 452" stroke="{a}" stroke-width="2.5" fill="none"/><circle cx="220" cy="484" r="7" fill="{a}"/><circle cx="218" cy="482" r="2" fill="#FFFFFF" opacity="0.6"/>
+    <path d="M70 640 C74 590 86 560 104 540" stroke="{sh}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M370 640 C366 590 354 560 336 540" stroke="{sh}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <rect x="96" y="560" width="62" height="80" rx="6" fill="#B98A5A" transform="rotate(-8 127 600)"/><rect x="102" y="574" width="50" height="66" rx="2" fill="#F7F5EF" transform="rotate(-8 127 600)"/>
+    <rect x="114" y="554" width="26" height="12" rx="3" fill="#8C8496" transform="rotate(-8 127 600)"/>
+    <g transform="rotate(-8 127 600)"><path d="M108 588 L112 592 L118 584 M108 604 L112 608 L118 600" stroke="#2F7A4A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <rect x="124" y="587" width="22" height="3" rx="1.5" fill="#8A929B"/><rect x="124" y="603" width="18" height="3" rx="1.5" fill="#8A929B"/><rect x="108" y="618" width="10" height="10" rx="2" fill="none" stroke="#8A929B" stroke-width="2"/><rect x="124" y="621" width="20" height="3" rx="1.5" fill="#8A929B"/></g>"""
     if c["outfit_style"] == "knit_sweater":
         o = c["outfit"]; sh = c["outfit_shade"]; a = c["accent"]
         knit = ''.join(f'<path d="M{x} 520 Q{x+6} 528 {x} 536 Q{x-6} 544 {x} 552 Q{x+6} 560 {x} 568 Q{x-6} 576 {x} 584 Q{x+6} 592 {x} 600 Q{x-6} 608 {x} 616 Q{x+6} 624 {x} 632" stroke="{sh}" stroke-width="3" fill="none" opacity="0.8"/>' for x in (176, 220, 264))
@@ -1128,7 +1192,12 @@ def head(c, mouth, blink):
         eyes = '<path d="M163 294 Q178 305 193 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M247 294 Q262 305 277 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/>'
     else:
         eyes = ''.join(f'<ellipse cx="{x}" cy="292" rx="15" ry="17" fill="#FFFFFF"/><circle cx="{x+1}" cy="294" r="9.5" fill="#2E1F18"/><circle cx="{x+4}" cy="290" r="3.2" fill="#FFFFFF"/>' for x in (178, 262))
-    if c["hair_style"] == "hijab":
+    if c["hair_style"] == "locs_bun":
+        hair = (f'<path d="M124 286 C112 196 166 150 222 150 C278 150 330 196 316 286 C310 250 300 226 282 214 C250 204 192 204 158 214 C140 228 130 252 124 286 Z" fill="{c["hair"]}"/>'
+                + ''.join(f'<path d="M{x} {y0} Q{x+dx} {y0+30} {x+dx*0.4:.0f} {y0+52}" stroke="#3A2A22" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>' for x, y0, dx in [(150, 196, -8), (172, 176, -6), (196, 164, -4), (244, 164, 4), (268, 176, 6), (290, 196, 8)])
+                + f'<path d="M222 152 L222 206" stroke="#3A2A22" stroke-width="2.5" opacity="0.6"/>'
+                + f'<path d="M136 230 C128 270 130 300 138 330" stroke="{c["hair"]}" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M304 230 C312 270 310 300 302 330" stroke="{c["hair"]}" stroke-width="14" fill="none" stroke-linecap="round"/>')
+    elif c["hair_style"] == "hijab":
         outline = "M220 140 C296 140 340 196 338 292 C336 356 342 400 362 458 C320 480 272 488 220 488 C168 488 120 480 78 458 C98 400 104 356 102 292 C100 196 144 140 220 140 Z"
         hair = (f'<path d="{outline} M220 206 C170 206 140 246 140 300 C140 360 176 400 220 400 C264 400 300 360 300 300 C300 246 270 206 220 206 Z" fill="{c["hijab"]}" fill-rule="evenodd"/>'
                 f'<path d="M220 206 C170 206 140 246 140 300 C140 360 176 400 220 400 C264 400 300 360 300 300 C300 246 270 206 220 206 Z" fill="none" stroke="{c["hijab_shade"]}" stroke-width="7"/>'
@@ -1274,6 +1343,11 @@ def head(c, mouth, blink):
         beard += f'<path d="M204 386 Q220 394 236 386 L234 394 Q228 400 220 400 Q212 400 206 394 Z" fill="{c["hair"]}"/>'
     blush = '0.5' if c["glasses"] else '0.25'
     back = ''
+    if c["hair_style"] == "locs_bun":
+        back = (f'<ellipse cx="222" cy="128" rx="46" ry="36" fill="{c["hair"]}"/>'
+                + ''.join(f'<path d="M{x} 100 Q{x+4} 128 {x} 156" stroke="#3A2A22" stroke-width="2.5" fill="none" opacity="0.7"/>' for x in (194, 210, 226, 242))
+                + f'<rect x="196" y="150" width="52" height="10" rx="5" fill="{c["accent"]}"/>'
+                + ''.join(f'<path d="M{x} 230 C{x+d} 300 {x+d} 360 {x+d*0.6:.0f} {y}" stroke="{c["hair"]}" stroke-width="19" fill="none" stroke-linecap="round"/><path d="M{x} 236 C{x+d} 300 {x+d} 360 {x+d*0.6:.0f} {y-6}" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.12" stroke-dasharray="7 6"/>' for x, d, y in [(126, -6, 400), (136, -16, 424), (146, -24, 440), (314, 6, 400), (304, 16, 424), (294, 24, 440)]))
     if c["hair_style"] == "side_braid":
         bx = [326, 334, 338, 338, 334, 328, 322]
         back = f'<path d="M290 220 C326 250 336 290 330 320" stroke="{c["hair"]}" stroke-width="26" fill="none" stroke-linecap="round"/>'

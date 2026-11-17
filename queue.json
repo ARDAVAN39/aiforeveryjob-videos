@@ -689,8 +689,32 @@
     {
       "slug": "project-managers",
       "title": "AI for Project Managers in 2026",
-      "status": "in_progress",
-      "claimed_at": "2026-11-17T10:20:01Z"
+      "status": "rendered",
+      "claimed_at": "2026-11-17T10:20:01Z",
+      "episode_module": "project_managers",
+      "file": "videos/AI-for-Project-Managers-in-2026.mp4",
+      "note": "Project workflow only: scoping, plans, risks, status reports, change requests and close-out. AI drafts, the PM decides; check dates and dependencies; protect project data and follow company AI policy.",
+      "chapters": [
+        "0:00 Intro",
+        "0:33 Kickoff: pin the scope",
+        "1:18 Build the plan",
+        "2:13 Risks and the RAID log",
+        "3:00 Meetings to actions",
+        "3:48 The Friday status report",
+        "4:30 The change request",
+        "5:12 Close-out and lessons",
+        "5:55 Three rules",
+        "6:40 Wrap-up"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Rovo in Jira (suggested work items)",
+        "Planner Agent in Microsoft Planner (plans from files, status reports)",
+        "Asana AI Teammates (risk reviews) and AI status reports",
+        "Smartsheet Smart Assist and Build with AI formulas",
+        "Rovo in Confluence whiteboards"
+      ]
     },
     {
       "slug": "social-workers",
