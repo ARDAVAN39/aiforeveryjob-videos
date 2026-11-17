@@ -536,7 +536,7 @@
     {
       "slug": "chefs",
       "title": "AI for Chefs and Restaurant Owners in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Kitchen workflow, menus, ordering, staff training and admin. No food-safety, allergen or legal guarantees: AI drafts, the chef and official food-safety rules decide; never trust AI for allergen info.",
       "episode_module": "chefs",
       "file": "videos/AI-for-Chefs-and-Restaurant-Owners-in-2026.mp4",
@@ -562,7 +562,9 @@
         "ChatGPT",
         "Claude",
         "Gemini"
-      ]
+      ],
+      "youtube_id": "yBGRliC-1ds",
+      "published": "2026-11-17"
     },
     {
       "slug": "electricians",
