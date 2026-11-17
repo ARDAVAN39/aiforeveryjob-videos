@@ -660,10 +660,31 @@
     {
       "slug": "data-analysts",
       "title": "AI for Data Analysts in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Workflow: cleaning, SQL, analysis, charts and explaining results. Stress checking AI-written queries and numbers; protect personal data.",
-      "claimed_at": "2026-11-17T09:21:40Z",
-      "episode_module": "data_analysts"
+      "episode_module": "data_analysts",
+      "file": "videos/AI-for-Data-Analysts-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:29 Pin down the question",
+        "1:06 Meet and clean the data",
+        "2:00 SQL, then doubt it",
+        "2:51 Dig in with Python",
+        "3:35 Charts that answer it",
+        "4:15 Explain it to Tom",
+        "4:55 Write it down, then learn",
+        "5:35 Three rules",
+        "6:17 Wrap-up"
+      ],
+      "tools": [
+        "ChatGPT data analysis",
+        "Claude (file creation and analysis)",
+        "Gemini in BigQuery (SQL generation, Explain this query, data insights)",
+        "Gemini in Google Sheets (charts)",
+        "Copilot in Excel (Python-based analysis)",
+        "Copilot in Power BI (narrative visual)",
+        "Hex Notebook Agent"
+      ]
     },
     {
       "slug": "project-managers",
