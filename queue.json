@@ -756,8 +756,9 @@
     {
       "slug": "photographers",
       "title": "AI for Photographers in 2026",
-      "status": "todo",
-      "note": "Editing workflow, culling, client communication and admin. Be honest about generative edits and disclosure; no legal or copyright advice."
+      "status": "in_progress",
+      "note": "Editing workflow, culling, client communication and admin. Be honest about generative edits and disclosure; no legal or copyright advice.",
+      "claimed_at": "2026-11-17T14:21:55Z"
     },
     {
       "slug": "veterinarians",
