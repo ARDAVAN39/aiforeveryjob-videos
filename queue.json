@@ -569,7 +569,9 @@
     {
       "slug": "freelancers",
       "title": "AI for Freelancers in 2026",
-      "status": "todo"
+      "status": "in_progress",
+      "claimed_at": "2026-11-17T02:19:55Z",
+      "note": "Finding work, proposals, client communication, project admin and learning. No tax, legal, contract or pricing advice; the freelancer decides rates and signs contracts."
     },
     {
       "slug": "job-seekers",
