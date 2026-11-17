@@ -800,9 +800,35 @@
     {
       "slug": "veterinarians",
       "title": "AI for Veterinarians in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Practice admin, documentation, client communication and learning only. No diagnosis, dosing or treatment advice.",
-      "claimed_at": "2026-11-17T16:20:10Z"
+      "claimed_at": "2026-11-17T16:20:10Z",
+      "episode_module": "veterinarians",
+      "file": "videos/AI-for-Veterinarians-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:33 Biscuit gets booked",
+        "1:19 The morning huddle",
+        "2:00 In the exam room",
+        "2:55 Biscuit's record",
+        "3:38 Biscuit goes home",
+        "4:23 The follow-up call",
+        "5:06 After Biscuit: you",
+        "5:51 Three rules",
+        "6:33 Wrap-up"
+      ],
+      "tools": [
+        "PetDesk automated reminders",
+        "Weave Smart Drafts",
+        "Gemini in Google Meet (Take notes for me)",
+        "ScribbleVet",
+        "Scribenote",
+        "VetRec",
+        "ezyVet AI-Assisted Notes (beta)",
+        "Copilot in Outlook",
+        "ChatGPT",
+        "Claude"
+      ]
     },
     {
       "slug": "farmers",
