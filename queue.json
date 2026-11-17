@@ -731,7 +731,7 @@
     {
       "slug": "social-workers",
       "title": "AI for Social Workers in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Documentation, admin, resources and learning only. No clinical, legal or benefits advice; protect client confidentiality; humans make every decision about people.",
       "claimed_at": "2026-11-17T11:20:30Z",
       "episode_module": "social_workers",
@@ -756,7 +756,9 @@
         "ChatGPT",
         "Claude",
         "Gemini"
-      ]
+      ],
+      "youtube_id": "5dR1IrN1k5s",
+      "published": "2026-11-17"
     },
     {
       "slug": "translators",
