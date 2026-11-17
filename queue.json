@@ -699,7 +699,7 @@
     {
       "slug": "project-managers",
       "title": "AI for Project Managers in 2026",
-      "status": "rendered",
+      "status": "published",
       "claimed_at": "2026-11-17T10:20:01Z",
       "episode_module": "project_managers",
       "file": "videos/AI-for-Project-Managers-in-2026.mp4",
@@ -724,7 +724,9 @@
         "Asana AI Teammates (risk reviews) and AI status reports",
         "Smartsheet Smart Assist and Build with AI formulas",
         "Rovo in Confluence whiteboards"
-      ]
+      ],
+      "youtube_id": "NkZVm_WoVQE",
+      "published": "2026-11-17"
     },
     {
       "slug": "social-workers",
