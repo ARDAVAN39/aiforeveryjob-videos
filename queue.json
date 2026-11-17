@@ -601,7 +601,7 @@
     {
       "slug": "freelancers",
       "title": "AI for Freelancers in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Finding work, proposals, client communication, project admin and learning. No tax, legal, contract or pricing advice; the freelancer decides rates and signs contracts.",
       "episode_module": "freelancers",
       "file": "videos/AI-for-Freelancers-in-2026.mp4",
@@ -627,7 +627,9 @@
         "ChatGPT study mode",
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "youtube_id": "Zm1IL4A-nU0",
+      "published": "2026-11-17"
     },
     {
       "slug": "job-seekers",
