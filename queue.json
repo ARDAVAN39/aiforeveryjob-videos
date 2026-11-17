@@ -934,9 +934,30 @@
     {
       "slug": "job-interview",
       "title": "AI for Your Job Interview in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Cross-cutting: preparing, practising and following up honestly. Never use AI to deceive or answer live during an interview; check employer rules.",
-      "claimed_at": "2026-11-17T20:23:00Z"
+      "claimed_at": "2026-11-17T20:23:00Z",
+      "episode_module": "job_interview",
+      "file": "videos/AI-for-Your-Job-Interview-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:27 One week out: the role",
+        "1:05 One week out: your stories",
+        "1:46 Four days out: rehearse",
+        "2:40 Three days out: format",
+        "3:20 If you get a take-home",
+        "4:07 Day before, hour before",
+        "4:44 After: thanks and review",
+        "5:21 Three rules",
+        "6:01 Wrap-up"
+      ],
+      "tools": [
+        "ChatGPT (ChatGPT Voice)",
+        "Claude (voice mode, beta)",
+        "Microsoft Copilot (mock interview coach)",
+        "Gemini Live (Gemini mobile app)",
+        "Yoodli (interview roleplays)"
+      ]
     }
   ]
 }
