@@ -668,7 +668,7 @@
     {
       "slug": "data-analysts",
       "title": "AI for Data Analysts in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Workflow: cleaning, SQL, analysis, charts and explaining results. Stress checking AI-written queries and numbers; protect personal data.",
       "episode_module": "data_analysts",
       "file": "videos/AI-for-Data-Analysts-in-2026.mp4",
@@ -692,7 +692,9 @@
         "Copilot in Excel (Python-based analysis)",
         "Copilot in Power BI (narrative visual)",
         "Hex Notebook Agent"
-      ]
+      ],
+      "youtube_id": "2FqL7uo3g1s",
+      "published": "2026-11-17"
     },
     {
       "slug": "project-managers",
