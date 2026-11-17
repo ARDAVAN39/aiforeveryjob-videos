@@ -628,6 +628,67 @@
       "title": "AI for Job Seekers in 2026",
       "status": "in_progress",
       "claimed_at": "2026-11-17T09:11:43Z"
+    },
+    {
+      "slug": "data-analysts",
+      "title": "AI for Data Analysts in 2026",
+      "status": "in_progress",
+      "note": "Workflow: cleaning, SQL, analysis, charts and explaining results. Stress checking AI-written queries and numbers; protect personal data.",
+      "claimed_at": "2026-11-17T09:21:40Z",
+      "episode_module": "data_analysts"
+    },
+    {
+      "slug": "project-managers",
+      "title": "AI for Project Managers in 2026",
+      "status": "todo"
+    },
+    {
+      "slug": "social-workers",
+      "title": "AI for Social Workers in 2026",
+      "status": "todo",
+      "note": "Documentation, admin, resources and learning only. No clinical, legal or benefits advice; protect client confidentiality; humans make every decision about people."
+    },
+    {
+      "slug": "translators",
+      "title": "AI for Translators and Interpreters in 2026",
+      "status": "todo",
+      "note": "Workflow, terminology, quality checks and business admin. Be honest about machine translation limits and confidentiality; no legal advice."
+    },
+    {
+      "slug": "photographers",
+      "title": "AI for Photographers in 2026",
+      "status": "todo",
+      "note": "Editing workflow, culling, client communication and admin. Be honest about generative edits and disclosure; no legal or copyright advice."
+    },
+    {
+      "slug": "veterinarians",
+      "title": "AI for Veterinarians in 2026",
+      "status": "todo",
+      "note": "Practice admin, documentation, client communication and learning only. No diagnosis, dosing or treatment advice."
+    },
+    {
+      "slug": "farmers",
+      "title": "AI for Farmers in 2026",
+      "status": "todo",
+      "note": "Farm admin, records, planning, learning and marketing. No agronomic, pesticide, veterinary or financial advice; local experts and labels decide."
+    },
+    {
+      "slug": "fitness-trainers",
+      "title": "AI for Fitness Trainers in 2026",
+      "status": "todo",
+      "note": "Business admin, client communication, scheduling and content. No medical, injury or nutrition advice; qualified professionals decide."
+    },
+    {
+      "slug": "logistics",
+      "title": "AI for Logistics and Delivery Drivers in 2026",
+      "status": "todo",
+      "note": "Routing, paperwork, communication and learning. Never use phones or AI while driving; follow company and road rules; no legal advice."
+    },
+    {
+      "slug": "job-interview",
+      "title": "AI for Your Job Interview in 2026",
+      "status": "todo",
+      "note": "Cross-cutting: preparing, practising and following up honestly. Never use AI to deceive or answer live during an interview; check employer rules."
     }
   ]
 }
