@@ -798,8 +798,9 @@
     {
       "slug": "veterinarians",
       "title": "AI for Veterinarians in 2026",
-      "status": "todo",
-      "note": "Practice admin, documentation, client communication and learning only. No diagnosis, dosing or treatment advice."
+      "status": "in_progress",
+      "note": "Practice admin, documentation, client communication and learning only. No diagnosis, dosing or treatment advice.",
+      "claimed_at": "2026-11-17T16:20:10Z"
     },
     {
       "slug": "farmers",
