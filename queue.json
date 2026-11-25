@@ -812,7 +812,7 @@
     {
       "slug": "veterinarians",
       "title": "AI for Veterinarians in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Practice admin, documentation, client communication and learning only. No diagnosis, dosing or treatment advice.",
       "claimed_at": "2026-11-17T16:20:10Z",
       "episode_module": "veterinarians",
@@ -840,7 +840,9 @@
         "Copilot in Outlook",
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "youtube_id": "Dyv7BH9MclE",
+      "published": "2026-11-25"
     },
     {
       "slug": "farmers",
