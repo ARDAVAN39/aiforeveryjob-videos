@@ -847,7 +847,7 @@
     {
       "slug": "farmers",
       "title": "AI for Farmers in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Farm admin, records, planning, learning and marketing. No agronomic, pesticide, veterinary or financial advice; local experts and labels decide.",
       "claimed_at": "2026-11-17T17:20:57Z",
       "episode_module": "farmers",
@@ -874,7 +874,9 @@
         "Google Translate conversation mode and camera",
         "Canva Magic Write",
         "Canva Magic Design"
-      ]
+      ],
+      "youtube_id": "oleDEC9j1EQ",
+      "published": "2026-11-25"
     },
     {
       "slug": "fitness-trainers",
