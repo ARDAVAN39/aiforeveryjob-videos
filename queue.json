@@ -995,9 +995,10 @@
     {
       "slug": "consultants",
       "title": "AI for Consultants in 2026",
-      "status": "todo",
+      "status": "in_progress",
       "note": "Research, client interviews, slide storylines and deliverables. Protect client confidentiality; no legal or financial advice.",
-      "episode_module": "consultants"
+      "episode_module": "consultants",
+      "claimed_at": "2026-11-25T10:01:00Z"
     },
     {
       "slug": "event-planners",
