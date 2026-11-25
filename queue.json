@@ -958,6 +958,77 @@
         "Gemini Live (Gemini mobile app)",
         "Yoodli (interview roleplays)"
       ]
+    },
+    {
+      "slug": "product-managers",
+      "title": "AI for Product Managers in 2026",
+      "status": "in_progress",
+      "note": "Discovery, user research synthesis, specs, prioritisation and stakeholder updates. Humans decide; protect customer data.",
+      "episode_module": "product_managers",
+      "claimed_at": "2026-11-25T09:25:00Z"
+    },
+    {
+      "slug": "consultants",
+      "title": "AI for Consultants in 2026",
+      "status": "todo",
+      "note": "Research, client interviews, slide storylines and deliverables. Protect client confidentiality; no legal or financial advice.",
+      "episode_module": "consultants"
+    },
+    {
+      "slug": "event-planners",
+      "title": "AI for Event Planners in 2026",
+      "status": "todo",
+      "note": "Briefs, venue research, run-of-show, attendee communication and follow-up. No contract or legal advice; verify suppliers directly.",
+      "episode_module": "event_planners"
+    },
+    {
+      "slug": "video-editors",
+      "title": "AI for Video Editors in 2026",
+      "status": "todo",
+      "note": "Transcripts, rough cuts, captions, audio clean-up and client review. Respect rights and consent; disclose AI-generated content.",
+      "episode_module": "video_editors"
+    },
+    {
+      "slug": "librarians",
+      "title": "AI for Librarians in 2026",
+      "status": "todo",
+      "note": "Reference help, information literacy, cataloguing support, programmes and admin. Teach source checking; protect patron privacy.",
+      "episode_module": "librarians"
+    },
+    {
+      "slug": "retail-workers",
+      "title": "AI for Retail Workers in 2026",
+      "status": "todo",
+      "note": "Product knowledge, customer questions, shift handovers, displays and training. Follow store policy; protect customer data.",
+      "episode_module": "retail_workers"
+    },
+    {
+      "slug": "engineers",
+      "title": "AI for Engineers in 2026",
+      "status": "todo",
+      "note": "Documentation, calculations checking workflow, reports, standards research and learning. Engineers stay responsible; never rely on AI for safety-critical results.",
+      "episode_module": "engineers"
+    },
+    {
+      "slug": "hospitality",
+      "title": "AI for Hotel and Hospitality Workers in 2026",
+      "status": "todo",
+      "note": "Guest messages, reviews, translations, housekeeping and front-desk admin, training. Protect guest data; no legal advice.",
+      "episode_module": "hospitality"
+    },
+    {
+      "slug": "admin-assistants",
+      "title": "AI for Administrative Assistants in 2026",
+      "status": "todo",
+      "note": "Inbox, calendars, meeting notes, travel planning, documents and templates. Follow company rules on data and tools.",
+      "episode_module": "admin_assistants"
+    },
+    {
+      "slug": "language-at-work",
+      "title": "AI for Learning a New Language at Work in 2026",
+      "status": "todo",
+      "note": "Cross-cutting: practising a work language with AI tutors, voice practice, vocabulary for your job and honest limits. No immigration or legal advice.",
+      "episode_module": "language_at_work"
     }
   ]
 }
