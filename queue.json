@@ -881,7 +881,7 @@
     {
       "slug": "fitness-trainers",
       "title": "AI for Fitness Trainers in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Business admin, client communication, scheduling and content. No medical, injury or nutrition advice; qualified professionals decide.",
       "claimed_at": "2026-11-17T18:20:21Z",
       "episode_module": "fitness_trainers",
@@ -909,7 +909,9 @@
         "ChatGPT",
         "Claude",
         "Gemini"
-      ]
+      ],
+      "youtube_id": "vzZ64xphqs0",
+      "published": "2026-11-25"
     },
     {
       "slug": "logistics",
