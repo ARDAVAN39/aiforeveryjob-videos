@@ -763,10 +763,12 @@
     {
       "slug": "translators",
       "title": "AI for Translators and Interpreters in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Workflow, terminology, quality checks and business admin. Be honest about machine translation limits and confidentiality; no legal advice.",
       "claimed_at": "2026-11-17T15:21:23Z",
-      "file": "videos/AI-for-Translators-and-Interpreters-in-2026.mp4"
+      "file": "videos/AI-for-Translators-and-Interpreters-in-2026.mp4",
+      "youtube_id": "Ic9XEepPNNU",
+      "published": "2026-11-25"
     },
     {
       "slug": "photographers",
