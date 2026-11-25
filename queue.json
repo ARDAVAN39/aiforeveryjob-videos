@@ -1037,9 +1037,10 @@
     {
       "slug": "video-editors",
       "title": "AI for Video Editors in 2026",
-      "status": "todo",
+      "status": "in_progress",
       "note": "Transcripts, rough cuts, captions, audio clean-up and client review. Respect rights and consent; disclose AI-generated content.",
-      "episode_module": "video_editors"
+      "episode_module": "video_editors",
+      "claimed_at": "2026-11-25T11:21:00Z"
     },
     {
       "slug": "librarians",
