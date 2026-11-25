@@ -1039,10 +1039,39 @@
     {
       "slug": "video-editors",
       "title": "AI for Video Editors in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Transcripts, rough cuts, captions, audio clean-up and client review. Respect rights and consent; disclose AI-generated content.",
       "episode_module": "video_editors",
-      "claimed_at": "2026-11-25T11:21:00Z"
+      "claimed_at": "2026-11-25T11:21:00Z",
+      "file": "videos/AI-for-Video-Editors-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:29 Log four hours fast",
+        "1:18 Paper edit first",
+        "1:55 Rough cut by text",
+        "2:36 Clean up the sound",
+        "3:20 Captions you can trust",
+        "4:02 One clean review round",
+        "4:43 Gaps, rights, disclosure",
+        "5:28 Three rules",
+        "6:10 Wrap-up"
+      ],
+      "tools": [
+        "Premiere Pro Text-Based Editing",
+        "Premiere Pro Paper Edit",
+        "Premiere Pro media intelligence search",
+        "Premiere Pro Enhance Speech",
+        "Premiere Pro Speech to Text",
+        "Premiere Pro Generative Extend",
+        "DaVinci Resolve Studio IntelliScript",
+        "DaVinci Resolve Studio Voice Isolation",
+        "Descript",
+        "CapCut auto captions",
+        "Frame.io",
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ]
     },
     {
       "slug": "librarians",
