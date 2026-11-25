@@ -997,10 +997,31 @@
     {
       "slug": "consultants",
       "title": "AI for Consultants in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Research, client interviews, slide storylines and deliverables. Protect client confidentiality; no legal or financial advice.",
       "episode_module": "consultants",
-      "claimed_at": "2026-11-25T10:01:00Z"
+      "claimed_at": "2026-11-25T10:01:00Z",
+      "file": "videos/AI-for-Consultants-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:32 Scope the engagement",
+        "1:22 Desk research, cited",
+        "2:04 Client interviews",
+        "2:57 Issue tree, hypotheses",
+        "3:38 Storyline, then slides",
+        "4:22 Check the numbers",
+        "5:12 Readout and handover",
+        "5:54 Three rules",
+        "6:35 Wrap-up"
+      ],
+      "tools": [
+        "Microsoft 365 Copilot in Word",
+        "ChatGPT deep research",
+        "Microsoft 365 Copilot in Teams meetings",
+        "Claude Projects",
+        "Microsoft 365 Copilot in PowerPoint",
+        "Microsoft 365 Copilot in Excel"
+      ]
     },
     {
       "slug": "event-planners",
