@@ -773,7 +773,7 @@
     {
       "slug": "photographers",
       "title": "AI for Photographers in 2026",
-      "status": "rendered",
+      "status": "published",
       "note": "Editing workflow, culling, client communication and admin. Be honest about generative edits and disclosure; no legal or copyright advice.",
       "claimed_at": "2026-11-17T14:21:55Z",
       "episode_module": "photographers",
@@ -805,7 +805,9 @@
         "ChatGPT",
         "Claude",
         "Gemini"
-      ]
+      ],
+      "youtube_id": "5Gyv5_VNBfM",
+      "published": "2026-11-25"
     },
     {
       "slug": "veterinarians",
