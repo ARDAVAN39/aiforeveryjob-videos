@@ -964,10 +964,33 @@
     {
       "slug": "product-managers",
       "title": "AI for Product Managers in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Discovery, user research synthesis, specs, prioritisation and stakeholder updates. Humans decide; protect customer data.",
       "episode_module": "product_managers",
-      "claimed_at": "2026-11-25T09:25:00Z"
+      "claimed_at": "2026-11-25T09:25:00Z",
+      "file": "videos/AI-for-Product-Managers-in-2026.mp4",
+      "chapters": [
+        "0:00 Intro",
+        "0:30 Who is it for?",
+        "1:13 What problem, exactly?",
+        "1:59 What is the evidence?",
+        "2:42 What do we build first?",
+        "3:39 How will we know?",
+        "4:24 Who needs to hear?",
+        "5:06 What did we learn?",
+        "5:45 Three rules",
+        "6:30 Wrap-up"
+      ],
+      "tools": [
+        "Claude (projects)",
+        "Notion AI Meeting Notes (Business and Enterprise plans)",
+        "Dovetail",
+        "Productboard Spark",
+        "Figma Make",
+        "Atlassian Rovo (Confluence and Jira)",
+        "Amplitude (Global Agent)",
+        "ChatGPT (data analysis)"
+      ]
     },
     {
       "slug": "consultants",

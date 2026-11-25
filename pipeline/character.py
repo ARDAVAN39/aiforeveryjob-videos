@@ -110,7 +110,10 @@ LOGISTICS = dict(skin="#6E4530", skin_shade="#5A3624", hair="#16110F", outfit="#
 INTERVIEWEE = dict(skin="#D9A882", skin_shade="#C08B64", hair="#2B1D16", hair_dark="#1A110C", outfit="#2C3A52", outfit_shade="#1F2A3D",
     accent="#B8423A", shirt="#DCE8F5", shirt_shade="#B7C9DD", wall_top="#E7ECEA", wall_bot="#B9C7C4", room="lobby",
     outfit_style="interview_suit", hair_style="textured_crop", glasses=False)
-PRESENTERS = {"interviewee": INTERVIEWEE, "logistics": LOGISTICS, "fitness_trainer": FITNESS, "farmer": FARMER, "veterinarian": VET, "translator": TRANSLATOR, "photographer": PHOTOGRAPHER, "social_worker": SOCIAL_WORKER, "project_manager": PROJECT_MANAGER, "analyst": ANALYST, "job_seeker": JOB_SEEKER, "chef": CHEF, "freelancer": FREELANCER, "electrician": ELECTRICIAN, "pharmacist": PHARMACIST, "architect": ARCHITECT, "journalist": JOURNALIST, "support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
+PRODUCT_MANAGER = dict(skin="#CF9C74", skin_shade="#B58158", hair="#221714", outfit="#C97B8E", outfit_shade="#A9617A",
+    accent="#2F6FDB", tee="#F7F4EE", tee_shade="#D9D3C8", rib="#24324D", rib_stripe="#F2C14E", wall_top="#E4ECE3", wall_bot="#BACDBB",
+    room="product_lab", outfit_style="bomber", hair_style="curtain_lob", glasses=False, earrings_stud="#F2C14E")
+PRESENTERS = {"product_manager": PRODUCT_MANAGER, "interviewee": INTERVIEWEE, "logistics": LOGISTICS, "fitness_trainer": FITNESS, "farmer": FARMER, "veterinarian": VET, "translator": TRANSLATOR, "photographer": PHOTOGRAPHER, "social_worker": SOCIAL_WORKER, "project_manager": PROJECT_MANAGER, "analyst": ANALYST, "job_seeker": JOB_SEEKER, "chef": CHEF, "freelancer": FREELANCER, "electrician": ELECTRICIAN, "pharmacist": PHARMACIST, "architect": ARCHITECT, "journalist": JOURNALIST, "support": SUPPORT, "researcher": RESEARCHER, "realtor": REALTOR, "hr": HR, "sales": SALES, "designer": DESIGNER, "accountant": ACCOUNTANT, "marketer": MARKETER, "nurse": NURSE, "lawyer": LAWYER, "dentist": DENTIST, "shopowner": SHOPOWNER, "student": STUDENT, "manager": MANAGER, "teacher": TEACHER, "doctor": DOCTOR, "developer": DEVELOPER}
 
 def _svg(body):
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW*2}" height="{PH*2}" viewBox="0 0 {PW} {PH}">{body}</svg>'
@@ -145,6 +148,57 @@ def _tooth(cx, cy, k, fill, stroke="none", sw=0):
     return f'<path d="{d}" transform="translate({cx} {cy}) scale({k})" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round"/>'
 
 def backdrop(c):
+    if c["room"] == "product_lab":
+        a = c["accent"]
+        # customer journey map on the left wall: five stages, a feelings line with faces, sticky notes
+        jm = ('<rect x="8" y="24" width="142" height="144" rx="6" fill="#FBFAF6"/><rect x="8" y="24" width="142" height="144" rx="6" fill="none" stroke="#8E9C90" stroke-width="3"/>'
+              f'<rect x="8" y="24" width="142" height="20" rx="6" fill="{a}"/><rect x="8" y="36" width="142" height="8" fill="{a}"/>'
+              '<text x="79" y="38" font-family="Inter" font-weight="800" font-size="9.5" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">JOURNEY MAP</text>'
+              + ''.join(f'<path d="M{x} 52 L{x} 162" stroke="#E2DED4" stroke-width="1.5"/>' for x in (36, 64, 92, 120)))
+        pts = [(22, 94), (50, 76), (78, 112), (106, 86), (134, 66)]
+        jm += '<path d="M' + ' L'.join(f'{x} {y}' for x, y in pts) + '" stroke="#8E9C90" stroke-width="2.5" fill="none" stroke-dasharray="5 4"/>'
+        for i, (x, y) in enumerate(pts):
+            sad = i == 2
+            jm += (f'<circle cx="{x}" cy="{y}" r="9" fill="{"#F7A8B8" if sad else "#F6D365"}" stroke="#4A3E2A" stroke-width="1.5"/>'
+                   f'<circle cx="{x-3}" cy="{y-2}" r="1.4" fill="#4A3E2A"/><circle cx="{x+3}" cy="{y-2}" r="1.4" fill="#4A3E2A"/>'
+                   + (f'<path d="M{x-4} {y+5} Q{x} {y+1} {x+4} {y+5}" stroke="#4A3E2A" stroke-width="1.5" fill="none"/>' if sad else f'<path d="M{x-4} {y+2} Q{x} {y+6} {x+4} {y+2}" stroke="#4A3E2A" stroke-width="1.5" fill="none"/>'))
+            jm += f'<rect x="{x-10}" y="54" width="20" height="6" rx="3" fill="#C9D3CB"/>'
+        for i, (x, y, col) in enumerate([(12, 130, "#F6D365"), (40, 136, "#9FE2BF"), (68, 128, "#F7A8B8"), (96, 136, "#9FC9F2"), (124, 130, "#F6D365")]):
+            r = (-4, 3, -2, 4, -3)[i]
+            jm += (f'<g transform="rotate({r} {x+11} {y+11})"><rect x="{x}" y="{y}" width="22" height="22" rx="1.5" fill="{col}"/>'
+                   f'<rect x="{x+4}" y="{y+6}" width="14" height="2.5" rx="1" fill="#4A3E2A" opacity="0.5"/><rect x="{x+4}" y="{y+12}" width="10" height="2.5" rx="1" fill="#4A3E2A" opacity="0.5"/></g>')
+        # lit WHY? sign, top right
+        sign = ('<rect x="326" y="24" width="104" height="54" rx="10" fill="#1F2A3A"/>'
+                f'<text x="378" y="62" font-family="Inter" font-weight="800" font-size="30" fill="none" stroke="{a}" stroke-width="5" opacity="0.35" text-anchor="middle">WHY?</text>'
+                '<text x="378" y="62" font-family="Inter" font-weight="800" font-size="30" fill="#F2C14E" text-anchor="middle">WHY?</text>'
+                '<path d="M350 24 L346 8 M406 24 L410 8" stroke="#1F2A3A" stroke-width="2"/>')
+        # persona card pinned below it
+        card = ('<g transform="rotate(2 378 148)"><rect x="328" y="92" width="102" height="112" rx="5" fill="#FFFFFF" stroke="#9AA79B" stroke-width="2"/>'
+                f'<rect x="328" y="92" width="102" height="18" rx="5" fill="#E5684C"/><rect x="328" y="104" width="102" height="6" fill="#E5684C"/>'
+                '<text x="379" y="105" font-family="Inter" font-weight="800" font-size="9" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">PERSONA</text>'
+                '<circle cx="352" cy="134" r="15" fill="#F6E3CF"/><circle cx="352" cy="130" r="6" fill="#8A5A3C"/><path d="M341 145 Q352 133 363 145 Z" fill="#8A5A3C"/>'
+                '<rect x="373" y="122" width="48" height="5" rx="2.5" fill="#2B2F3A"/><rect x="373" y="132" width="38" height="3" rx="1.5" fill="#9AA6A4"/><rect x="373" y="139" width="44" height="3" rx="1.5" fill="#9AA6A4"/>'
+                '<rect x="338" y="158" width="82" height="3" rx="1.5" fill="#9AA6A4"/><rect x="338" y="166" width="70" height="3" rx="1.5" fill="#9AA6A4"/>'
+                f'<rect x="338" y="178" width="30" height="12" rx="6" fill="{a}" opacity="0.85"/><rect x="372" y="178" width="38" height="12" rx="6" fill="#9FE2BF"/>'
+                '<circle cx="379" cy="94" r="4" fill="#E5684C" stroke="#8E2F1F" stroke-width="1"/></g>')
+        lamp = '<path d="M232 0 L232 22" stroke="#1F2A3A" stroke-width="3"/><path d="M214 42 Q216 22 232 22 Q248 22 250 42 Z" fill="#2F6F5A"/><ellipse cx="232" cy="42" rx="18" ry="4" fill="#FFE7A8"/>'
+        desk = (f'<rect x="0" y="292" width="{PW}" height="348" fill="#C7AE8A"/><rect x="0" y="286" width="{PW}" height="8" fill="#DCC6A2"/><rect x="0" y="294" width="{PW}" height="4" fill="#9C8462"/>'
+                # laptop with a rising usage chart, right
+                '<path d="M330 286 L340 244 L422 244 L414 286 Z" fill="#B8C0C8"/><path d="M335 282 L344 248 L417 248 L409 282 Z" fill="#1F2A3A"/>'
+                f'<path d="M348 274 L362 268 L374 271 L388 260 L404 254" stroke="{a}" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+                '<path d="M348 276 L404 276" stroke="#5A6578" stroke-width="1.5"/><circle cx="404" cy="254" r="3" fill="#F2C14E"/>'
+                '<rect x="322" y="284" width="100" height="6" rx="3" fill="#D3D9DE"/>'
+                # sticky-note pads and a marker, left
+                '<rect x="18" y="268" width="34" height="18" rx="2" fill="#F6D365"/><rect x="18" y="264" width="34" height="6" fill="#E9C24F"/>'
+                '<rect x="20" y="256" width="30" height="10" rx="2" fill="#F7A8B8" transform="rotate(-6 35 261)"/>'
+                
+                # mug
+                '<rect x="64" y="252" width="26" height="34" rx="5" fill="#FFFFFF"/><path d="M90 260 Q104 262 102 272 Q100 280 90 278" stroke="#FFFFFF" stroke-width="5" fill="none"/>'
+                f'<text x="77" y="276" font-family="Inter" font-weight="800" font-size="16" fill="{a}" text-anchor="middle">?</text>')
+        return f'''<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["wall_top"]}"/><stop offset="1" stop-color="{c["wall_bot"]}"/></linearGradient>
+        <radialGradient id="g" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF3C9" stop-opacity="0.4"/><stop offset="1" stop-color="#FFF3C9" stop-opacity="0"/></radialGradient></defs>
+        <rect width="{PW}" height="{PH}" fill="url(#w)"/><circle cx="232" cy="96" r="150" fill="url(#g)"/>
+        {jm}{sign}{card}{lamp}{desk}'''
     if c["room"] == "lobby":
         import math
         a = c["accent"]
@@ -1129,6 +1183,29 @@ def backdrop(c):
     return b
 
 def body(c):
+    if c["outfit_style"] == "bomber":
+        o = c["outfit"]; sh = c["outfit_shade"]; a = c["accent"]; rb = c["rib"]; rs = c["rib_stripe"]
+        return f"""
+    <rect x="190" y="372" width="60" height="90" rx="22" fill="{c["skin_shade"]}"/>
+    <path d="M36 640 C36 524 88 464 172 446 L220 470 L268 446 C352 464 404 524 404 640 Z" fill="{c["tee"]}"/>
+    <path d="M176 450 Q220 492 264 450" stroke="{c["tee_shade"]}" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <rect x="202" y="560" width="36" height="36" rx="10" fill="{a}"/><path d="M212 572 Q212 566 220 566 Q228 566 228 573 Q228 578 220 580 L220 585" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="220" cy="590" r="2.2" fill="#FFFFFF"/>
+    <path d="M36 640 C36 524 88 464 166 444 L182 452 C190 500 194 560 192 640 Z" fill="{o}"/>
+    <path d="M404 640 C404 524 352 464 274 444 L258 452 C250 500 246 560 248 640 Z" fill="{o}"/>
+    <path d="M150 470 C160 520 168 580 170 640" stroke="{sh}" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round"/>
+    <path d="M290 470 C280 520 272 580 270 640" stroke="{sh}" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round"/>
+    <path d="M104 540 C88 566 76 600 72 640 M336 540 C352 566 364 600 368 640" stroke="{sh}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M190 456 C194 520 196 580 194 640 M250 456 C246 520 244 580 246 640" stroke="#C9CED6" stroke-width="3" fill="none" stroke-dasharray="3 3"/>
+    <path d="M150 446 Q178 444 192 462" stroke="{rb}" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <path d="M290 446 Q262 444 248 462" stroke="{rb}" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <path d="M152 446 Q178 444 191 461 M288 446 Q262 444 249 461" stroke="{rs}" stroke-width="2.5" fill="none"/>
+    <path d="M110 520 L150 512 L152 528 L112 536 Z" fill="{sh}" opacity="0.9"/><path d="M114 522 L146 516" stroke="{rs}" stroke-width="2"/>
+    <g transform="rotate(8 306 598)"><rect x="282" y="556" width="48" height="86" rx="9" fill="#1F2A3A"/><rect x="287" y="566" width="38" height="70" rx="3" fill="#FFFFFF"/>
+    <rect x="291" y="570" width="30" height="7" rx="2" fill="{a}"/>
+    <rect x="292" y="583" width="6" height="6" rx="1.5" fill="none" stroke="#2F7A4A" stroke-width="1.5"/><path d="M293 586 L295 588 L298 584" stroke="#2F7A4A" stroke-width="1.5" fill="none"/><rect x="301" y="584" width="18" height="3" rx="1.5" fill="#9AA6A4"/>
+    <rect x="292" y="594" width="6" height="6" rx="1.5" fill="none" stroke="#9AA6A4" stroke-width="1.5"/><rect x="301" y="595" width="14" height="3" rx="1.5" fill="#9AA6A4"/>
+    <rect x="292" y="605" width="6" height="6" rx="1.5" fill="none" stroke="#9AA6A4" stroke-width="1.5"/><rect x="301" y="606" width="16" height="3" rx="1.5" fill="#9AA6A4"/>
+    <circle cx="316" cy="626" r="5" fill="{rs}"/><circle cx="306" cy="626" r="5" fill="#9FE2BF"/></g>"""
     if c["outfit_style"] == "interview_suit":
         a = c["accent"]; o = c["outfit"]; sh = c["outfit_shade"]; sr = c["shirt"]; ss = c["shirt_shade"]
         return f"""
@@ -1758,7 +1835,15 @@ def head(c, mouth, blink):
         eyes = '<path d="M163 294 Q178 305 193 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M247 294 Q262 305 277 294" stroke="#2E1F18" stroke-width="5" fill="none" stroke-linecap="round"/>'
     else:
         eyes = ''.join(f'<ellipse cx="{x}" cy="292" rx="15" ry="17" fill="#FFFFFF"/><circle cx="{x+1}" cy="294" r="9.5" fill="#2E1F18"/><circle cx="{x+4}" cy="290" r="3.2" fill="#FFFFFF"/>' for x in (178, 262))
-    if c["hair_style"] == "textured_crop":
+    if c["hair_style"] == "curtain_lob":
+        h = c["hair"]
+        hair = (f'<path d="M120 300 C104 190 168 138 222 140 C276 138 340 190 320 300 C316 262 304 236 288 222 C268 206 242 198 222 198 C202 198 176 206 156 222 C140 236 126 262 120 300 Z" fill="{h}"/>'
+                f'<path d="M222 194 C190 200 160 222 146 272 L132 274 C136 228 170 196 222 188 Z" fill="{h}"/>'
+                f'<path d="M222 194 C254 200 282 222 294 272 L308 274 C304 228 272 196 222 188 Z" fill="{h}"/>'
+                f'<path d="M222 146 L222 196" stroke="#000000" stroke-width="2" opacity="0.3"/>'
+                f'<path d="M174 164 C194 152 212 150 216 156 M266 160 C288 166 304 184 310 204" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.15" stroke-linecap="round"/>'
+                f'<path d="M210 204 C184 214 164 234 154 262" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.14" stroke-linecap="round"/>')
+    elif c["hair_style"] == "textured_crop":
         h = c["hair"]; hd = c["hair_dark"]
         hair = (f'<path d="M128 266 C122 238 126 214 140 200 C142 224 136 246 128 266 Z M312 266 C318 238 314 214 300 200 C298 224 304 246 312 266 Z" fill="{hd}"/>'
                 f'<path d="M134 232 C122 168 166 132 222 130 C278 132 320 168 306 232 C298 216 284 208 268 204 C240 200 200 200 172 204 C156 208 142 216 134 232 Z" fill="{h}"/>'
@@ -1982,6 +2067,11 @@ def head(c, mouth, blink):
     if c.get("freckles"):
         beard += ''.join(f'<circle cx="{x}" cy="{y}" r="2.2" fill="#B9774E" opacity="0.6"/>' for x, y in [(146, 318), (156, 326), (168, 320), (160, 312), (274, 320), (284, 312), (292, 326), (280, 328), (208, 312), (232, 312)])
     back = ''
+    if c["hair_style"] == "curtain_lob":
+        h = c["hair"]
+        back = (f'<path d="M124 226 C96 292 98 370 106 414 Q136 430 168 412 C174 376 170 330 160 290 Z" fill="{h}"/>'
+                f'<path d="M316 226 C344 292 342 370 334 414 Q304 430 272 412 C266 376 270 330 280 290 Z" fill="{h}"/>'
+                f'<path d="M112 300 Q104 350 114 398 M328 300 Q336 350 326 398" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.13" stroke-linecap="round"/>')
     if c["hair_style"] == "curly_pony":
         import math
         h = c["hair"]
