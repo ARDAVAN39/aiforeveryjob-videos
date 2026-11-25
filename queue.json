@@ -1076,9 +1076,10 @@
     {
       "slug": "librarians",
       "title": "AI for Librarians in 2026",
-      "status": "todo",
+      "status": "in_progress",
       "note": "Reference help, information literacy, cataloguing support, programmes and admin. Teach source checking; protect patron privacy.",
-      "episode_module": "librarians"
+      "episode_module": "librarians",
+      "claimed_at": "2026-11-25T12:21:29Z"
     },
     {
       "slug": "retail-workers",
