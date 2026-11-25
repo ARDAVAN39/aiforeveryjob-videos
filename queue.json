@@ -1028,10 +1028,11 @@
     {
       "slug": "event-planners",
       "title": "AI for Event Planners in 2026",
-      "status": "in_progress",
+      "status": "rendered",
       "note": "Briefs, venue research, run-of-show, attendee communication and follow-up. No contract or legal advice; verify suppliers directly.",
       "episode_module": "event_planners",
-      "claimed_at": "2026-11-25T10:21:00Z"
+      "claimed_at": "2026-11-25T10:21:00Z",
+      "file": "videos/AI-for-Event-Planners-in-2026.mp4"
     },
     {
       "slug": "video-editors",
